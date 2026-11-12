@@ -139,7 +139,7 @@
         </div>
         <div class="relative mx-auto hidden w-full max-w-[330px] md:block">
           <div class="aspect-[4/5] overflow-hidden rounded-t-[48%] border border-[#B08D57]/50 bg-white/5 p-3">
-            <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" hidden>
+            <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" hidden>
             <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-t-[48%] border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)">Professional portrait (optional)</span></div>
           </div>
           <span class="absolute -bottom-4 -left-5 h-16 w-16 rounded-full border border-[#B08D57]/70"></span>
@@ -266,7 +266,7 @@
       if (nonempty(CONFIG.ecourtsProfile)) document.getElementById("ecourtsLink").href = CONFIG.ecourtsProfile; else document.getElementById("ecourtsLink").hidden = true;
       if (nonempty(CONFIG.portraitUrl)) { const img=document.getElementById("portrait"); img.src=CONFIG.portraitUrl; img.hidden=false; document.getElementById("portraitPlaceholder").hidden=true; }
       if (nonempty(CONFIG.mapEmbedUrl)) { const map=document.getElementById("officeMap"); map.src=CONFIG.mapEmbedUrl; map.hidden=false; document.getElementById("mapPlaceholder").hidden=true; }
-      if (nonempty(CONFIG.lastUpdated)) { const t=document.getElementById("lastUpdated"); t.textContent=CONFIG.lastUpdated; t.dateTime=CONFIG.lastUpdated; } else document.getElementById("lastUpdated").parentElement.hidden=true;
+      if (nonempty(CONFIG.lastUpdated)) { const t=document.getElementById("lastUpdated"); t.textContent=CONFIG.lastUpdated; } else document.getElementById("lastUpdated").parentElement.hidden=true;
       document.getElementById("year").textContent = new Date().getFullYear();
       function language(lang, persist=true) {
         document.documentElement.lang=lang;
@@ -274,6 +274,7 @@
         document.querySelectorAll("[data-en][data-bn]").forEach(el => el.innerHTML = el.dataset[lang]);
         document.querySelectorAll("[data-aria-en][data-aria-bn]").forEach(el => el.setAttribute("aria-label", el.dataset[`aria${lang === "en" ? "En" : "Bn"}`]));
         document.querySelectorAll("[data-title-en][data-title-bn]").forEach(el => el.title = el.dataset[`title${lang === "en" ? "En" : "Bn"}`]);
+        document.querySelectorAll("[data-alt-en][data-alt-bn]").forEach(el => el.alt = el.dataset[`alt${lang === "en" ? "En" : "Bn"}`]);
         document.title=copy[lang].title;
         document.querySelector('meta[name="description"]').content=copy[lang].description;
         document.querySelectorAll("[data-wa]").forEach(a => { a.href=`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(copy[lang].wa)}`; a.dataset.tooltip=copy[lang].tooltip; a.setAttribute("aria-label", copy[lang].waLabel); });
