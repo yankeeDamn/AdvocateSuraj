@@ -43,9 +43,9 @@
       officeHours: "Open 24 hours",
       officeHoursBn: "২৪ ঘণ্টা খোলা",
       officeHoursHi: "24 घंटे खुला",
-      profileNote: "Advocate Suraj Lala is a practising lawyer based in Rampurhat, Birbhum, West Bengal. Areas of practice include criminal and civil matters.",
-      profileNoteBn: "অ্যাডভোকেট সুরজ লালা পশ্চিমবঙ্গের বীরভূম জেলার রামপুরহাটে কর্মরত একজন আইনজীবী। তাঁর কাজের ক্ষেত্রের মধ্যে ফৌজদারি ও দেওয়ানি বিষয় অন্তর্ভুক্ত।",
-      profileNoteHi: "अधिवक्ता सुरज लाला पश्चिम बंगाल के बीरभूम ज़िले के रामपुरहाट में वकालत करते हैं। उनके कार्यक्षेत्र में आपराधिक और दीवानी मामले शामिल हैं.",
+      profileNote: "Advocate Suraj Lala is a practising lawyer based in Rampurhat, Birbhum, West Bengal. He practises in criminal and civil matters before local trial and district courts, including courts in Rampurhat and Suri.",
+      profileNoteBn: "অ্যাডভোকেট সুরজ লালা পশ্চিমবঙ্গের বীরভূম জেলার রামপুরহাটে কর্মরত একজন আইনজীবী। তিনি রামপুরহাট ও সিউড়ির আদালতসহ স্থানীয় বিচার ও জেলা আদালতে ফৌজদারি এবং দেওয়ানি বিষয়ে কাজ করেন।",
+      profileNoteHi: "अधिवक्ता सूरज लाला पश्चिम बंगाल के बीरभूम ज़िले के रामपुरहाट में वकालत करते हैं। वे रामपुरहाट और सूरी के न्यायालयों सहित स्थानीय विचारण और जिला न्यायालयों में आपराधिक एवं दीवानी मामलों में कार्य करते हैं।",
       mapEmbedUrl: "https://www.google.com/maps?output=embed&cid=9894814549936854279",
       mapLink: "https://www.google.com/maps?cid=9894814549936854279",
       portraitUrl: "images/advocate-suraj-lala.webp",
@@ -71,6 +71,8 @@
     .lang-switch button { min-width:44px; min-height:44px; border:0; border-radius:999px; padding:0 9px; background:transparent; color:var(--navy); font:inherit; font-size:.76rem; font-weight:700; cursor:pointer; }
     .lang-switch button[aria-pressed="true"] { background:var(--navy); color:#fff; }
     .lang-switch button:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+    .brand-mark { animation:brandPulse 6s ease-in-out infinite; transition:transform .25s,box-shadow .25s; }
+    .brand-home:hover .brand-mark { transform:rotate(-5deg) scale(1.06); box-shadow:0 0 0 5px rgba(176,141,87,.12); }
     .hero { position:relative; isolation:isolate; overflow:hidden; background:var(--navy); color:#fff; }
     .hero:before { content:""; position:absolute; z-index:-1; width:370px; height:370px; right:-100px; top:-120px; border:1px solid rgba(176,141,87,.4); border-radius:50%; box-shadow:0 0 0 34px rgba(176,141,87,.08),0 0 0 70px rgba(176,141,87,.05); animation:orbitFloat 16s ease-in-out infinite; }
     .hero:after { content:""; position:absolute; z-index:-1; width:120px; height:1px; right:12%; top:55%; background:var(--gold); transform:rotate(-38deg); animation:accentGlow 5s ease-in-out infinite; }
@@ -102,6 +104,7 @@
     @keyframes orbitFloat { 0%,100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(14px) rotate(3deg); } }
     @keyframes accentGlow { 0%,100% { opacity:.4; } 50% { opacity:.95; } }
     @keyframes lineTravel { 0%,25% { transform:translateX(0); opacity:0; } 45% { opacity:.8; } 75%,100% { transform:translateX(70px); opacity:0; } }
+    @keyframes brandPulse { 0%,100% { box-shadow:0 0 0 0 rgba(176,141,87,0); } 50% { box-shadow:0 0 0 4px rgba(176,141,87,.1); } }
     .reveal { opacity:0; transform:translateY(12px); transition:opacity .55s ease,transform .55s ease; }
     .reveal.visible { opacity:1; transform:none; }
     #practice .practice-card:nth-child(2) { transition-delay:60ms; }
@@ -137,8 +140,8 @@
   <a class="skip" href="#main" data-en="Skip to content" data-bn="মূল বিষয়ে যান" data-hi="मुख्य सामग्री पर जाएँ">Skip to content</a>
   <header class="topbar sticky top-0 z-20">
     <div class="wrap flex min-h-[72px] items-center justify-between gap-4">
-      <a href="#top" class="flex items-center gap-3 no-underline" aria-label="Advocate Suraj Lala — home" data-aria-en="Advocate Suraj Lala — home" data-aria-bn="অ্যাডভোকেট সুরজ লালা — মূল পৃষ্ঠা" data-aria-hi="अधिवक्ता सुरज लाला — मुख्य पृष्ठ">
-        <span class="grid h-10 w-10 place-items-center rounded-full border border-[#B08D57] text-sm font-semibold text-[#B08D57]">SL</span>
+      <a href="#top" class="brand-home flex items-center gap-3 no-underline" aria-label="Advocate Suraj Lala — home" data-aria-en="Advocate Suraj Lala — home" data-aria-bn="অ্যাডভোকেট সুরজ লালা — মূল পৃষ্ঠা" data-aria-hi="अधिवक्ता सूरज लाला — मुख्य पृष्ठ">
+        <span class="brand-mark grid h-10 w-10 place-items-center rounded-full border border-[#B08D57] text-sm font-semibold text-[#B08D57]">SL</span>
         <span class="leading-tight"><span class="block text-sm font-bold tracking-wide text-[var(--navy)]" data-name></span><span class="mt-1 block text-[10px] tracking-[.12em] text-slate-500" data-en="ADVOCATE" data-bn="অ্যাডভোকেট" data-hi="अधिवक्ता">ADVOCATE</span></span>
       </a>
       <nav class="desktop-nav flex items-center gap-6" aria-label="Primary navigation" data-aria-en="Primary navigation" data-aria-bn="প্রধান নেভিগেশন" data-aria-hi="मुख्य नेविगेशन">
@@ -172,7 +175,7 @@
         </div>
         <div class="relative mx-auto w-full max-w-[280px] md:max-w-[330px]">
           <div class="aspect-[4/5] overflow-hidden rounded-t-[48%] border border-[#B08D57]/50 bg-white/5 p-3">
-            <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" data-alt-hi="अधिवक्ता सुरज लाला का चित्र" hidden>
+            <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" data-alt-hi="अधिवक्ता सूरज लाला का चित्र" hidden>
             <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-t-[48%] border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)" data-hi="व्यावसायिक चित्र (वैकल्पिक)">Professional portrait (optional)</span></div>
           </div>
           <span class="absolute -bottom-4 -left-5 h-16 w-16 rounded-full border border-[#B08D57]/70"></span>
@@ -253,7 +256,7 @@
     <div class="wrap">
       <div class="rounded-lg border border-[#B08D57]/50 bg-[#f3eee4] p-4 text-sm leading-relaxed text-[#394458] dark:bg-[#1b2834] dark:text-slate-200">
         <p class="font-bold" data-en="Disclaimer" data-bn="দাবিত্যাগ" data-hi="अस्वीकरण">Disclaimer</p>
-        <p class="mt-1" data-en="This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship." data-bn="এই তথ্য অ্যাডভোকেট সুরজ লালার অনুরোধে প্রকাশ করা হয়েছে, তথ্যটি সত্য ও যথার্থ এবং এই ওয়েবসাইট বিজ্ঞাপন বা মক্কেল আহ্বান নয়। এই ওয়েবসাইটের কোনও তথ্য আইনি পরামর্শ হিসেবে গণ্য হবে না এবং এর ফলে অ্যাডভোকেট ও মক্কেলের মধ্যে সম্পর্ক তৈরি হবে না।" data-hi="यह जानकारी अधिवक्ता सुरज लाला के अनुरोध पर दी गई है और सत्य एवं प्रामाणिक है। यह वेबसाइट विज्ञापन या मुवक्किल प्राप्त करने का आग्रह नहीं करती। यहाँ दी गई कोई भी जानकारी कानूनी सलाह नहीं है और इससे अधिवक्ता-मुवक्किल संबंध स्थापित नहीं होता।">This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship.</p>
+        <p class="mt-1" data-en="This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship." data-bn="এই তথ্য অ্যাডভোকেট সুরজ লালার অনুরোধে প্রকাশ করা হয়েছে, তথ্যটি সত্য ও যথার্থ এবং এই ওয়েবসাইট বিজ্ঞাপন বা মক্কেল আহ্বান নয়। এই ওয়েবসাইটের কোনও তথ্য আইনি পরামর্শ হিসেবে গণ্য হবে না এবং এর ফলে অ্যাডভোকেট ও মক্কেলের মধ্যে সম্পর্ক তৈরি হবে না।" data-hi="यह जानकारी अधिवक्ता सूरज लाला के अनुरोध पर दी गई है और सत्य एवं प्रामाणिक है। यह वेबसाइट विज्ञापन या मुवक्किल प्राप्त करने का आग्रह नहीं करती। यहाँ दी गई कोई भी जानकारी कानूनी सलाह नहीं है और इससे अधिवक्ता-मुवक्किल संबंध स्थापित नहीं होता।">This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship.</p>
       </div>
       <div class="mt-5 flex flex-col justify-between gap-3 text-xs text-slate-500 sm:flex-row sm:items-center">
         <p>© <span id="year"></span> <span data-name></span>. <span data-en="All rights reserved." data-bn="সর্বস্বত্ব সংরক্ষিত।" data-hi="सर्वाधिकार सुरक्षित।">All rights reserved.</span></p>
@@ -268,7 +271,7 @@
       const copy = {
         en: { wa: "Hello Advocate Suraj Lala, I would like to make an enquiry regarding a legal matter.", tooltip: "Message on WhatsApp", waLabel: "Message Advocate Suraj Lala on WhatsApp", title: "Advocate Suraj Lala | Rampurhat & Suri, Birbhum", description: "Professional information and contact details for Advocate Suraj Lala in Rampurhat and Suri, Birbhum, West Bengal.", locale:"en_IN" },
         bn: { wa: "নমস্কার অ্যাডভোকেট সুরজ লালা, একটি আইনি বিষয় সম্পর্কে যোগাযোগ করতে চাই।", tooltip: "হোয়াটসঅ্যাপে বার্তা পাঠান", waLabel: "হোয়াটসঅ্যাপে অ্যাডভোকেট সুরজ লালাকে বার্তা পাঠান", title: "অ্যাডভোকেট সুরজ লালা | রামপুরহাট ও সিউড়ি, বীরভূম", description: "রামপুরহাট ও সিউড়ি, বীরভূম, পশ্চিমবঙ্গের অ্যাডভোকেট সুরজ লালার পেশাগত তথ্য ও যোগাযোগের বিবরণ।", locale:"bn_IN" },
-        hi: { wa: "नमस्ते अधिवक्ता सुरज लाला। एक कानूनी विषय के संबंध में आपसे जानकारी प्राप्त करनी है।", tooltip: "व्हाट्सऐप पर संदेश भेजें", waLabel: "व्हाट्सऐप पर अधिवक्ता सुरज लाला को संदेश भेजें", title: "अधिवक्ता सुरज लाला | रामपुरहाट और सूरी, बीरभूम", description: "पश्चिम बंगाल के बीरभूम ज़िले के रामपुरहाट और सूरी में अधिवक्ता सुरज लाला की व्यावसायिक जानकारी और संपर्क विवरण।", locale:"hi_IN" }
+        hi: { wa: "नमस्ते अधिवक्ता सूरज लाला। एक कानूनी विषय के संबंध में आपसे जानकारी प्राप्त करनी है।", tooltip: "व्हाट्सऐप पर संदेश भेजें", waLabel: "व्हाट्सऐप पर अधिवक्ता सूरज लाला को संदेश भेजें", title: "अधिवक्ता सूरज लाला | रामपुरहाट और सूरी, बीरभूम", description: "पश्चिम बंगाल के बीरभूम ज़िले के रामपुरहाट और सूरी में अधिवक्ता सूरज लाला की व्यावसायिक जानकारी और संपर्क विवरण।", locale:"hi_IN" }
       };
       const nonempty = value => typeof value === "string" && value.trim().length > 0;
       const configured = value => nonempty(value) && !/X/i.test(value);
