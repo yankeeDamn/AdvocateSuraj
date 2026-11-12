@@ -261,7 +261,10 @@
       qualifications.forEach(q => { const li=document.createElement("li"); li.textContent=q; qlist.appendChild(li); });
       if (nonempty(CONFIG.profileNote)) document.getElementById("profileNote").textContent = CONFIG.profileNote;
       else document.getElementById("profileNote").hidden = true;
-      if (nonempty(CONFIG.phoneDisplay) && !/^X/.test(CONFIG.phoneDisplay)) document.querySelectorAll("[data-phone]").forEach(a => { a.href=`tel:${CONFIG.phoneDisplay.replace(/[^+\d]/g,"")}`; });
+      if (nonempty(CONFIG.phoneDisplay)) document.querySelectorAll("[data-phone]").forEach(a => { if (configured(CONFIG.phoneDisplay)) a.href=`tel:${CONFIG.phoneDisplay.replace(/[^+\d]/g,"")}`; else a.removeAttribute("href"); });
+      if (!nonempty(CONFIG.phoneDisplay)) document.querySelectorAll("[data-phone]").forEach(a => a.hidden=true);
+      const waNumber=(CONFIG.whatsappNumber||"").replace(/\D/g,"");
+      if (!/^\d{10,15}$/.test(waNumber)) document.querySelectorAll("[data-wa]").forEach(a => a.hidden=true);
       document.querySelectorAll("[data-email]").forEach(a => { if (configured(CONFIG.email) && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONFIG.email)) a.href=`mailto:${CONFIG.email}`; else a.removeAttribute("href"); });
       if (nonempty(CONFIG.ecourtsProfile)) document.getElementById("ecourtsLink").href = CONFIG.ecourtsProfile; else document.getElementById("ecourtsLink").hidden = true;
       if (nonempty(CONFIG.portraitUrl)) { const img=document.getElementById("portrait"); img.src=CONFIG.portraitUrl; img.hidden=false; document.getElementById("portraitPlaceholder").hidden=true; }
@@ -277,7 +280,7 @@
         document.querySelectorAll("[data-alt-en][data-alt-bn]").forEach(el => el.alt = el.dataset[`alt${lang === "en" ? "En" : "Bn"}`]);
         document.title=copy[lang].title;
         document.querySelector('meta[name="description"]').content=copy[lang].description;
-        document.querySelectorAll("[data-wa]").forEach(a => { a.href=`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(copy[lang].wa)}`; a.dataset.tooltip=copy[lang].tooltip; a.setAttribute("aria-label", copy[lang].waLabel); });
+        document.querySelectorAll("[data-wa]").forEach(a => { a.href=`https://wa.me/${waNumber}?text=${encodeURIComponent(copy[lang].wa)}`; a.dataset.tooltip=copy[lang].tooltip; a.setAttribute("aria-label", copy[lang].waLabel); });
         const toggle=document.getElementById("languageToggle"); toggle.setAttribute("aria-label", lang === "en" ? "Switch language to Bengali" : "ভাষা ইংরেজিতে পরিবর্তন করুন");
         if (persist) { try { localStorage.setItem("advocateSiteLanguage",lang); } catch (_) {} }
       }
