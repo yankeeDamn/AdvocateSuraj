@@ -160,11 +160,18 @@
     html.theme-light .map-frame { background:linear-gradient(145deg,#e8e4db,#f5f1e8); }
     html.theme-light .brand-home .text-slate-500 { color:#64748b; }
     html.theme-light .brand-mark { color:var(--gold); }
+    html.theme-light .brand-home [data-name] { color:var(--navy); }
+    .professional-bar { background:linear-gradient(90deg,#2b160e,#321d12,#2b160e); border-bottom:1px solid rgba(176,141,87,.28); color:#f1d18d; font-size:.72rem; letter-spacing:.025em; }
+    .status-dot { width:8px; height:8px; flex:0 0 8px; border-radius:50%; background:#35d49a; box-shadow:0 0 0 3px rgba(53,212,154,.14); }
+    .name-accent { color:#e6c15a; }
+    html.theme-light .professional-bar { background:#f3eee4; border-color:var(--line); color:#57472e; }
+    html.theme-light .status-dot { background:#658b72; box-shadow:0 0 0 3px rgba(101,139,114,.13); }
   </style>
   <script type="application/ld+json" id="schema"></script>
 </head>
 <body>
   <a class="skip" href="#main" data-en="Skip to content" data-bn="মূল বিষয়ে যান" data-hi="मुख्य सामग्री पर जाएँ">Skip to content</a>
+  <div class="professional-bar"><div class="wrap flex min-h-[34px] items-center gap-2"><span class="status-dot" aria-hidden="true"></span><span data-en="Rampurhat Bar Association · ACJM &amp; ADJ Courts, Rampurhat · Suri District Court Complex, Birbhum, West Bengal" data-bn="রামপুরহাট বার অ্যাসোসিয়েশন · রামপুরহাটের অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট ও অতিরিক্ত জেলা জজ আদালত · সিউড়ি জেলা আদালত কমপ্লেক্স, বীরভূম, পশ্চিমবঙ্গ" data-hi="रामपुरहाट बार एसोसिएशन · रामपुरहाट के अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट और अतिरिक्त जिला न्यायाधीश न्यायालय · सूरी जिला न्यायालय परिसर, बीरभूम, पश्चिम बंगाल">Rampurhat Bar Association · ACJM &amp; ADJ Courts, Rampurhat · Suri District Court Complex, Birbhum, West Bengal</span></div></div>
   <header class="topbar sticky top-0 z-20">
     <div class="wrap flex min-h-[72px] items-center justify-between gap-4">
       <a href="#top" class="brand-home flex items-center gap-3 no-underline" aria-label="Advocate Suraj Lala — home" data-aria-en="Advocate Suraj Lala — home" data-aria-bn="অ্যাডভোকেট সুরজ লালা — মূল পৃষ্ঠা" data-aria-hi="अधिवक्ता सूरज लाला — मुख्य पृष्ठ">
@@ -192,7 +199,7 @@
       <div class="wrap grid min-h-[480px] items-center gap-12 py-16 md:grid-cols-[1.2fr_.8fr] md:py-24">
         <div class="reveal">
           <p class="eyebrow mb-6" data-en="Rampurhat Bar Association · Birbhum Judiciary" data-bn="রামপুরহাট বার অ্যাসোসিয়েশন · বীরভূম বিচারব্যবস্থা" data-hi="रामपुरहाट बार एसोसिएशन · बीरभूम न्यायपालिका">Rampurhat Bar Association · Birbhum Judiciary</p>
-          <h1 class="serif mb-5 text-6xl font-semibold leading-[1.04] tracking-tight"><span data-name></span></h1>
+          <h1 class="serif mb-5 text-6xl font-semibold leading-[1.04] tracking-tight"><span data-en="Advocate" data-bn="অ্যাডভোকেট" data-hi="अधिवक्ता">Advocate</span> <span class="name-accent" data-name>Suraj Lala</span></h1>
           <div class="gold-line mb-6"></div>
           <p class="max-w-xl text-lg leading-relaxed text-slate-200" data-en="Practising advocate before the Additional Chief Judicial Magistrate and Additional District Judge courts in Rampurhat, and Suri District Court Complex, Birbhum, West Bengal." data-bn="বীরভূম, পশ্চিমবঙ্গের রামপুরহাটের অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট ও অতিরিক্ত জেলা জজ আদালত এবং সিউড়ি জেলা আদালত কমপ্লেক্সে কর্মরত অ্যাডভোকেট।" data-hi="बीरभूम, पश्चिम बंगाल के रामपुरहाट स्थित अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट और अतिरिक्त जिला न्यायाधीश न्यायालयों तथा सूरी जिला न्यायालय परिसर में वकालत करते हैं।">Practising advocate before the Additional Chief Judicial Magistrate and Additional District Judge courts in Rampurhat, and Suri District Court Complex, Birbhum, West Bengal.</p>
           <div class="mt-8 flex flex-wrap gap-3">
@@ -373,7 +380,7 @@
         const toggle=document.getElementById("themeToggleBtn"); if(toggle)toggle.setAttribute("aria-pressed",String(light));
         if (persist) { try { localStorage.setItem("advocateSiteTheme",light?"light":"dark"); } catch (_) {} }
       }
-      let initialTheme=window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+      let initialTheme="dark";
       try { const savedTheme=localStorage.getItem("advocateSiteTheme"); if (["light","dark"].includes(savedTheme)) initialTheme=savedTheme; } catch (_) {}
       setTheme(initialTheme,false);
       const themeToggle=document.getElementById("themeToggleBtn");
