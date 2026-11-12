@@ -51,6 +51,7 @@
       mapEmbedUrl: "https://www.google.com/maps?output=embed&cid=9894814549936854279",
       mapLink: "https://www.google.com/maps?cid=9894814549936854279",
       portraitUrl: "images/advocate-suraj-lala.webp",
+      courtPhotoUrl: "images/rampurhat-court.webp",
       lastUpdated: "12 November 2026",
       lastUpdatedBn: "১২ নভেম্বর ২০২৬",
       lastUpdatedHi: "१२ नवंबर २०२६"
@@ -106,6 +107,11 @@
     .detail-chip { display:inline-flex; min-height:24px; align-items:center; border:1px solid rgba(176,141,87,.3); border-radius:6px; padding:.18rem .5rem; background:rgba(176,141,87,.1); color:#e7c56d; font-size:.66rem; font-weight:750; }
     .about-chambers { display:grid; grid-template-columns:1.5fr 1fr; gap:1rem; border-color:rgba(176,141,87,.42); background:linear-gradient(120deg,#0b1220,#111c2c); }
     .about-chambers-value { color:#f0f2f5; font-size:.9rem; font-weight:650; line-height:1.55; }
+    .court-photo-card { overflow:hidden; border-color:rgba(176,141,87,.38); background:linear-gradient(145deg,#101a29,#0a101d); }
+    .court-photo-frame { aspect-ratio:4/3; overflow:hidden; background:#0a1220; }
+    .court-photo-frame img { width:100%; height:100%; object-fit:cover; object-position:center 43%; transition:transform .6s ease; }
+    .court-photo-card:hover .court-photo-frame img { transform:scale(1.025); }
+    .court-photo-caption { padding:1rem 1.15rem; }
     html.theme-light .about-detail-card { background:linear-gradient(145deg,#fffefa,#f3eee4); border-color:rgba(176,141,87,.48); }
     html.theme-light .about-detail-card p,html.theme-light .about-detail-card li { color:#34445a; }
     html.theme-light .about-chambers { background:linear-gradient(120deg,#fffefa,#f3eee4); }
@@ -270,7 +276,7 @@
         </div>
         <div class="hero-visual reveal relative mx-auto w-full max-w-[330px] md:max-w-[430px]">
           <div class="hero-image-frame aspect-[4/5] overflow-hidden border bg-white/5 p-2.5">
-            <img id="portrait" class="h-full w-full object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" data-alt-hi="अधिवक्ता सूरज लाला का चित्र" hidden>
+            <img id="portrait" class="h-full w-full object-cover" loading="eager" fetchpriority="high" decoding="async" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" data-alt-hi="अधिवक्ता सूरज लाला का चित्र" hidden>
             <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-xl border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)" data-hi="व्यावसायिक चित्र (वैकल्पिक)">Professional portrait (optional)</span></div>
           </div>
           <div class="hero-location-card"><span class="hero-location-label" data-en="Office location · Rampurhat" data-bn="কার্যালয়ের অবস্থান · রামপুরহাট" data-hi="कार्यालय का स्थान · रामपुरहाट">Office location · Rampurhat</span><span id="heroLocationValue" class="hero-location-value">Chaldhowani Para, Rampurhat</span></div>
@@ -297,6 +303,10 @@
             <div data-about-field="officeAddress"><p class="section-kicker mb-2" data-en="Chambers location" data-bn="চেম্বারের ঠিকানা" data-hi="चैंबर का पता">Chambers location</p><p class="about-chambers-value" data-contact-value="officeAddress"></p></div>
             <div data-about-field="officeHours"><p class="section-kicker mb-2" data-en="Office hours" data-bn="কার্যালয়ের সময়" data-hi="कार्यालय समय">Office hours</p><p class="about-chambers-value" data-contact-value="officeHours"></p></div>
           </div>
+          <figure id="courtPhotoFigure" class="court-photo-card card mt-4 reveal">
+            <div class="court-photo-frame"><img id="courtPhoto" src="images/rampurhat-court.webp" alt="Rampurhat Court Complex, Birbhum" data-alt-en="Rampurhat Court Complex, Birbhum" data-alt-bn="রামপুরহাট আদালত কমপ্লেক্স, বীরভূম" data-alt-hi="रामपुरहाट न्यायालय परिसर, बीरभूम" loading="lazy"></div>
+            <figcaption class="court-photo-caption"><span class="section-kicker block mb-1" data-en="Rampurhat, Birbhum" data-bn="রামপুরহাট, বীরভূম" data-hi="रामपुरहाट, बीरभूम">Rampurhat, Birbhum</span><span class="text-sm font-semibold text-slate-200 dark:text-slate-200" data-en="Sub-Divisional Civil &amp; Criminal Court" data-bn="মহকুমা দেওয়ানি ও ফৌজদারি আদালত" data-hi="अनुमंडलीय दीवानी एवं फौजदारी न्यायालय">Sub-Divisional Civil & Criminal Court</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -410,6 +420,7 @@
       document.querySelectorAll("[data-email]").forEach(a => { if (configured(CONFIG.email) && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONFIG.email)) a.href=`mailto:${CONFIG.email}`; else a.removeAttribute("href"); });
       if (nonempty(CONFIG.ecourtsProfile)) document.getElementById("ecourtsLink").href = CONFIG.ecourtsProfile; else document.getElementById("ecourtsLink").hidden = true;
       if (nonempty(CONFIG.portraitUrl)) { const img=document.getElementById("portrait"); img.src=CONFIG.portraitUrl; img.hidden=false; document.getElementById("portraitPlaceholder").hidden=true; document.querySelector('meta[property="og:image"]').content=new URL(CONFIG.portraitUrl,location.href).href; }
+      if (nonempty(CONFIG.courtPhotoUrl)) { document.getElementById("courtPhoto").src=CONFIG.courtPhotoUrl; } else document.getElementById("courtPhotoFigure").hidden=true;
       if (nonempty(CONFIG.mapEmbedUrl)) { const map=document.getElementById("officeMap"); map.src=CONFIG.mapEmbedUrl; map.hidden=false; document.getElementById("mapPlaceholder").hidden=true; } else document.getElementById("mapPlaceholder").hidden=false;
       if (nonempty(CONFIG.mapLink)) document.getElementById("mapLink").href=CONFIG.mapLink; else document.getElementById("mapLink").hidden=true;
       if (nonempty(CONFIG.lastUpdated)) { const t=document.getElementById("lastUpdated"); t.textContent=CONFIG.lastUpdated; } else document.getElementById("lastUpdated").parentElement.hidden=true;
