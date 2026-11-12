@@ -133,6 +133,8 @@
     [hidden] { display:none !important; }
     @media (max-width:700px) { .desktop-nav { display:none; } .hero h1 { font-size:clamp(2.65rem,13vw,4.2rem); } .hero:before { right:-220px; } .mobile-call { display:inline-flex; } }
     @media (min-width:701px) { .mobile-call { display:none; } }
+    @media (min-width:701px) { .hero-facts { grid-template-columns:repeat(3,minmax(0,1fr)); } .hero-fact:nth-child(3) { grid-column:auto; } }
+    @media (max-width:700px) { .hero-location-card { left:0; right:10px; bottom:12px; } .hero-location-value { font-size:.82rem; } }
     @media (prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto !important; animation:none !important; transition-duration:.01ms !important; } .reveal { opacity:1; transform:none; } .practice-card:hover,.btn:hover { transform:none; } }
     @media (prefers-color-scheme:dark) {
       :root { --paper:#101820; --ink:#eef1f5; --muted:#bac4d0; --line:#2b3948; --card:#17232f; }
@@ -166,6 +168,26 @@
     .professional-bar { background:linear-gradient(90deg,#2b160e,#321d12,#2b160e); border-bottom:1px solid rgba(176,141,87,.28); color:#f1d18d; font-size:.72rem; letter-spacing:.025em; }
     .status-dot { width:8px; height:8px; flex:0 0 8px; border-radius:50%; background:#35d49a; box-shadow:0 0 0 3px rgba(53,212,154,.14); }
     .name-accent { color:#e6c15a; }
+    .hero-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
+    .hero-fact { position:relative; min-width:0; overflow:hidden; padding:.9rem; border:1px solid rgba(176,141,87,.34); border-radius:12px; background:linear-gradient(145deg,rgba(16,26,41,.96),rgba(9,14,26,.9)); box-shadow:0 14px 32px rgba(0,0,0,.16); }
+    .hero-fact:nth-child(3) { grid-column:span 2; }
+    .hero-fact:after { content:""; position:absolute; inset:0 auto 0 -60%; width:30%; transform:skewX(-20deg); background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent); animation:cardSheen 8s ease-in-out infinite; }
+    .hero-fact-label { display:block; margin-bottom:.4rem; color:#e6c15a; font-size:.63rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+    .hero-fact-value { display:block; color:#f2f4f8; font-size:.78rem; font-weight:650; line-height:1.45; }
+    .hero-visual { isolation:isolate; }
+    .hero-image-frame { position:relative; border-radius:16px; border-color:rgba(176,141,87,.58); background:#0a1220; box-shadow:0 28px 70px rgba(0,0,0,.38); }
+    .hero-image-frame:after { content:""; position:absolute; inset:45% 0 0; border-radius:0 0 14px 14px; background:linear-gradient(180deg,transparent,rgba(2,6,15,.24)); pointer-events:none; }
+    .hero-image-frame img { border-radius:14px; transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+    .hero-visual:hover .hero-image-frame img { transform:scale(1.025); }
+    .hero-location-card { position:absolute; z-index:2; left:-22px; right:14px; bottom:15px; padding:.9rem 1rem; border:1px solid rgba(176,141,87,.48); border-radius:12px; background:rgba(5,8,17,.92); box-shadow:0 16px 40px rgba(0,0,0,.32); backdrop-filter:blur(12px); animation:floatCard 5.5s ease-in-out infinite; }
+    .hero-location-label { display:block; margin-bottom:.3rem; color:#e6c15a; font-size:.65rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .hero-location-value { color:#f4f1e9; font-size:.9rem; font-weight:650; }
+    @keyframes floatCard { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-5px); } }
+    @keyframes cardSheen { 0%,60% { left:-60%; } 78%,100% { left:140%; } }
+    html.theme-light .hero-fact { background:linear-gradient(145deg,#fffefa,#f3eee4); border-color:rgba(176,141,87,.55); }
+    html.theme-light .hero-fact-value { color:#17263a; }
+    html.theme-light .hero-location-card { background:rgba(250,248,244,.96); }
+    html.theme-light .hero-location-value { color:#17263a; }
     html.theme-light .professional-bar { background:#f3eee4; border-color:var(--line); color:#57472e; }
     html.theme-light .status-dot { background:#658b72; box-shadow:0 0 0 3px rgba(101,139,114,.13); }
   </style>
@@ -201,7 +223,7 @@
       <div class="wrap grid min-h-[480px] items-center gap-12 py-16 md:grid-cols-[1.2fr_.8fr] md:py-24">
         <div class="reveal">
           <p class="eyebrow mb-6" data-en="Rampurhat Bar Association · Birbhum Judiciary" data-bn="রামপুরহাট বার অ্যাসোসিয়েশন · বীরভূম বিচারব্যবস্থা" data-hi="रामपुरहाट बार एसोसिएशन · बीरभूम न्यायपालिका">Rampurhat Bar Association · Birbhum Judiciary</p>
-          <h1 class="serif mb-5 text-6xl font-semibold leading-[1.04] tracking-tight"><span data-en="Advocate" data-bn="অ্যাডভোকেট" data-hi="अधिवक्ता">Advocate</span> <span class="name-accent" data-name>Suraj Lala</span></h1>
+          <h1 class="serif mb-5 text-6xl font-semibold leading-[1.04] tracking-tight md:text-7xl"><span data-en="Advocate" data-bn="অ্যাডভোকেট" data-hi="अधिवक्ता">Advocate</span> <span class="name-accent" data-name>Suraj Lala</span></h1>
           <div class="gold-line mb-6"></div>
           <p class="max-w-xl text-lg leading-relaxed text-slate-200" data-en="Practising advocate before the Additional Chief Judicial Magistrate and Additional District Judge courts in Rampurhat, and Suri District Court Complex, Birbhum, West Bengal." data-bn="বীরভূম, পশ্চিমবঙ্গের রামপুরহাটের অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট ও অতিরিক্ত জেলা জজ আদালত এবং সিউড়ি জেলা আদালত কমপ্লেক্সে কর্মরত অ্যাডভোকেট।" data-hi="बीरभूम, पश्चिम बंगाल के रामपुरहाट स्थित अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट और अतिरिक्त जिला न्यायाधीश न्यायालयों तथा सूरी जिला न्यायालय परिसर में वकालत करते हैं।">Practising advocate before the Additional Chief Judicial Magistrate and Additional District Judge courts in Rampurhat, and Suri District Court Complex, Birbhum, West Bengal.</p>
           <div class="mt-8 flex flex-wrap gap-3">
@@ -212,12 +234,18 @@
             <a class="btn btn-outline mobile-call" data-phone href="tel:+918653635636"><span aria-hidden="true">☎</span><span data-en="Call" data-bn="ফোন করুন" data-hi="कॉल करें">Call</span></a>
           </div>
           <p class="mt-4 max-w-md text-xs leading-relaxed text-slate-300" data-en="Please do not share confidential documents until an engagement is confirmed." data-bn="পেশাগত নিয়োগ নিশ্চিত না হওয়া পর্যন্ত অনুগ্রহ করে গোপনীয় নথি শেয়ার করবেন না।" data-hi="नियुक्ति की पुष्टि होने तक कृपया गोपनीय दस्तावेज़ साझा न करें।">Please do not share confidential documents until an engagement is confirmed.</p>
-        </div>
-        <div class="relative mx-auto w-full max-w-[280px] md:max-w-[330px]">
-          <div class="aspect-[4/5] overflow-hidden rounded-t-[48%] border border-[#B08D57]/50 bg-white/5 p-3">
-            <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" data-alt-hi="अधिवक्ता सूरज लाला का चित्र" hidden>
-            <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-t-[48%] border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)" data-hi="व्यावसायिक चित्र (वैकल्पिक)">Professional portrait (optional)</span></div>
+          <div class="hero-facts mt-7 reveal">
+            <article class="hero-fact"><span class="hero-fact-label" data-en="Courts of practice" data-bn="কর্মক্ষেত্রের আদালত" data-hi="कार्य क्षेत्र के न्यायालय">Courts of practice</span><span class="hero-fact-value" data-en="ACJM &amp; ADJ, Rampurhat · Suri District Court" data-bn="রামপুরহাটের অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট ও জেলা জজ আদালত · সিউড়ি জেলা আদালত" data-hi="रामपुरहाट के अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट एवं जिला न्यायाधीश न्यायालय · सूरी जिला न्यायालय">ACJM &amp; ADJ, Rampurhat · Suri District Court</span></article>
+            <article class="hero-fact"><span class="hero-fact-label" data-en="Bar association" data-bn="বার অ্যাসোসিয়েশন" data-hi="बार एसोसिएशन">Bar association</span><span class="hero-fact-value" data-en="Rampurhat Bar Association" data-bn="রামপুরহাট বার অ্যাসোসিয়েশন" data-hi="रामपुरहाट बार एसोसिएशन">Rampurhat Bar Association</span></article>
+            <article class="hero-fact"><span class="hero-fact-label" data-en="Qualification" data-bn="শিক্ষাগত যোগ্যতা" data-hi="शैक्षणिक योग्यता">Qualification</span><span class="hero-fact-value">LL.B.</span></article>
           </div>
+        </div>
+        <div class="hero-visual reveal relative mx-auto w-full max-w-[330px] md:max-w-[430px]">
+          <div class="hero-image-frame aspect-[4/5] overflow-hidden border bg-white/5 p-2.5">
+            <img id="portrait" class="h-full w-full object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" data-alt-hi="अधिवक्ता सूरज लाला का चित्र" hidden>
+            <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-xl border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)" data-hi="व्यावसायिक चित्र (वैकल्पिक)">Professional portrait (optional)</span></div>
+          </div>
+          <div class="hero-location-card"><span class="hero-location-label" data-en="Office location · Rampurhat" data-bn="কার্যালয়ের অবস্থান · রামপুরহাট" data-hi="कार्यालय का स्थान · रामपुरहाट">Office location · Rampurhat</span><span id="heroLocationValue" class="hero-location-value">Chaldhowani Para, Rampurhat</span></div>
           <span class="absolute -bottom-4 -left-5 h-16 w-16 rounded-full border border-[#B08D57]/70"></span>
         </div>
       </div>
@@ -343,6 +371,8 @@
       if (nonempty(CONFIG.mapEmbedUrl)) { const map=document.getElementById("officeMap"); map.src=CONFIG.mapEmbedUrl; map.hidden=false; document.getElementById("mapPlaceholder").hidden=true; } else document.getElementById("mapPlaceholder").hidden=false;
       if (nonempty(CONFIG.mapLink)) document.getElementById("mapLink").href=CONFIG.mapLink; else document.getElementById("mapLink").hidden=true;
       if (nonempty(CONFIG.lastUpdated)) { const t=document.getElementById("lastUpdated"); t.textContent=CONFIG.lastUpdated; } else document.getElementById("lastUpdated").parentElement.hidden=true;
+      const heroLocation=document.getElementById("heroLocationValue");
+      if (heroLocation) { heroLocation.textContent=CONFIG.locationArea||""; if(!nonempty(CONFIG.locationArea))heroLocation.closest(".hero-location-card").hidden=true; }
       document.getElementById("year").textContent = new Date().getFullYear();
       function language(lang, persist=true) {
         if (!copy[lang]) return;
@@ -357,6 +387,7 @@
           officeHours:CONFIG[`officeHours${suffix}`]||CONFIG.officeHours
         };
         Object.entries(localizedValues).forEach(([key,value])=>{const el=document.querySelector(`[data-contact-value="${key}"]`);if(el)el.textContent=value||"";});
+        if(heroLocation)heroLocation.textContent=localizedValues.locationArea||"";
         const councilValue=document.getElementById("stateBarCouncil"); if(councilValue)councilValue.textContent=CONFIG[`stateBarCouncil${suffix}`]||CONFIG.stateBarCouncil;
         const associationValue=document.getElementById("barAssociation"); if(associationValue)associationValue.textContent=CONFIG[`barAssociation${suffix}`]||CONFIG.barAssociation;
         const aboutValue=lang === "bn" ? CONFIG.profileNoteBn : lang === "hi" ? CONFIG.profileNoteHi : CONFIG.profileNote;
