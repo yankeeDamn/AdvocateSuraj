@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +55,7 @@
     };
   </script>
   <style>
-    :root { color-scheme: light dark; --navy:#0B1F3A; --paper:#FAF8F4; --gold:#B08D57; --ink:#17263a; --muted:#657184; --line:#e8e3da; --card:#fffefa; }
+    :root { color-scheme:dark; --navy:#0B1F3A; --paper:#060a14; --gold:#B08D57; --ink:#eef1f5; --muted:#bac4d0; --line:#293548; --card:#101a29; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:5rem; }
     body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,"Noto Sans Bengali",sans-serif; }
@@ -64,16 +64,28 @@
     [lang="hi"] body, body.hi { font-family:"Noto Sans Devanagari",Inter,sans-serif; }
     a, button { -webkit-tap-highlight-color:transparent; }
     .wrap { width:min(1120px,calc(100% - 32px)); margin-inline:auto; }
-    .topbar { background:rgba(250,248,244,.92); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
-    .nav-link { min-height:44px; display:inline-flex; align-items:center; color:#34445a; font-size:.83rem; font-weight:600; text-decoration:none; }
+    .topbar { background:rgba(5,8,17,.94); border-bottom:1px solid rgba(176,141,87,.24); backdrop-filter:blur(12px); }
+    .topbar > .wrap { column-gap:6px; }
+    .nav-link { min-height:44px; display:inline-flex; align-items:center; color:#d2dbe6; font-size:.83rem; font-weight:600; text-decoration:none; }
     .nav-link:hover { color:var(--gold); }
-    .lang-switch { display:flex; align-items:center; gap:2px; padding:3px; border:1px solid var(--line); border-radius:999px; background:var(--card); }
-    .lang-switch button { min-width:44px; min-height:44px; border:0; border-radius:999px; padding:0 9px; background:transparent; color:var(--navy); font:inherit; font-size:.76rem; font-weight:700; cursor:pointer; }
-    .lang-switch button[aria-pressed="true"] { background:var(--navy); color:#fff; }
+    .brand-home [data-name] { color:#e6c15a; font-family:"Playfair Display",Georgia,serif; }
+    .brand-home .text-slate-500 { color:#9aa8bb; }
+    .lang-switch { display:flex; align-items:center; gap:2px; padding:3px; border:1px solid rgba(176,141,87,.3); border-radius:999px; background:#101a29; }
+    .lang-switch button { min-width:44px; min-height:44px; border:0; border-radius:999px; padding:0 8px; background:transparent; color:#f3e7cf; font:inherit; font-size:.76rem; font-weight:700; cursor:pointer; }
+    .lang-switch button[aria-pressed="true"] { background:#d4af37; color:#111827; }
     .lang-switch button:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+    .theme-toggle { width:44px; height:44px; flex:0 0 44px; display:grid; place-items:center; border:1px solid rgba(176,141,87,.3); border-radius:10px; background:#101a29; color:#e6c15a; cursor:pointer; }
+    .theme-toggle:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+    .theme-toggle svg { width:19px; height:19px; }
+    .theme-icon-sun { display:block; }
+    .theme-icon-moon { display:none; }
+    html.theme-light .theme-icon-sun { display:none; }
+    html.theme-light .theme-icon-moon { display:block; }
     .brand-mark { animation:brandPulse 6s ease-in-out infinite; transition:transform .25s,box-shadow .25s; }
     .brand-home:hover .brand-mark { transform:rotate(-5deg) scale(1.06); box-shadow:0 0 0 5px rgba(176,141,87,.12); }
     .hero { position:relative; isolation:isolate; overflow:hidden; background:var(--navy); color:#fff; }
+    .hero .eyebrow { display:inline-flex; align-items:center; gap:.55rem; padding:.5rem .9rem; border:1px solid rgba(176,141,87,.42); border-radius:999px; background:rgba(176,141,87,.1); color:#e6c15a; letter-spacing:.06em; }
+    .hero .eyebrow:before { content:""; width:7px; height:7px; flex:0 0 7px; border-radius:50%; background:#d4af37; box-shadow:0 0 0 4px rgba(212,175,55,.13); }
     .hero:before { content:""; position:absolute; z-index:-1; width:370px; height:370px; right:-100px; top:-120px; border:1px solid rgba(176,141,87,.4); border-radius:50%; box-shadow:0 0 0 34px rgba(176,141,87,.08),0 0 0 70px rgba(176,141,87,.05); animation:orbitFloat 16s ease-in-out infinite; }
     .hero:after { content:""; position:absolute; z-index:-1; width:120px; height:1px; right:12%; top:55%; background:var(--gold); transform:rotate(-38deg); animation:accentGlow 5s ease-in-out infinite; }
     .eyebrow { color:#d7bd91; letter-spacing:.16em; text-transform:uppercase; font-size:.72rem; font-weight:700; }
@@ -83,14 +95,14 @@
     .btn:hover { transform:translateY(-1px); }
     .btn-wa { background:#25D366; color:#062811; }
     .btn-outline { border:1px solid rgba(255,255,255,.38); color:white; }
-    .section-kicker { color:#8b6c3f; text-transform:uppercase; letter-spacing:.14em; font-weight:700; font-size:.72rem; }
-    .section-title { color:var(--navy); letter-spacing:-.025em; }
+    .section-kicker { color:#d1b27b; text-transform:uppercase; letter-spacing:.14em; font-weight:700; font-size:.72rem; }
+    .section-title { color:#f4f1e9; letter-spacing:-.025em; }
     .card { background:var(--card); border:1px solid var(--line); border-radius:12px; }
     .practice-card { min-height:176px; transition:transform .2s,border-color .2s,box-shadow .2s; }
     .practice-card:hover { transform:translateY(-3px); border-color:rgba(176,141,87,.65); box-shadow:0 12px 30px rgba(11,31,58,.07); }
-    .icon-box { width:42px; height:42px; border-radius:10px; display:grid; place-items:center; background:#f2ede4; color:#8b6c3f; }
-    .practice-card h3 { font-size:1rem; line-height:1.45; font-weight:700; color:var(--navy); }
-    .practice-card p,.body-copy { color:#5d6878; line-height:1.75; font-size:.92rem; }
+    .icon-box { width:42px; height:42px; border-radius:10px; display:grid; place-items:center; background:#263341; color:#e1c58f; }
+    .practice-card h3 { font-size:1rem; line-height:1.45; font-weight:700; color:#f4f1e9; }
+    .practice-card p,.body-copy { color:#c2ccd7; line-height:1.75; font-size:.92rem; }
     .court-row { border-bottom:1px solid var(--line); padding:1rem 0; }
     .contact-panel { background:var(--navy); color:#fff; }
     .contact-panel .muted { color:#ccd4df; }
@@ -133,6 +145,21 @@
       .section-kicker { color:#d1b27b; }
       .map-frame { background:linear-gradient(145deg,#263341,#1a2835); }
     }
+    html.theme-light { color-scheme:light; --paper:#FAF8F4; --ink:#17263a; --muted:#657184; --line:#e8e3da; --card:#fffefa; }
+    html.theme-light body { background:var(--paper); color:var(--ink); }
+    html.theme-light .topbar { background:rgba(250,248,244,.95); border-color:var(--line); }
+    html.theme-light .nav-link { color:#34445a; }
+    html.theme-light .lang-switch, html.theme-light .theme-toggle { background:var(--card); border-color:var(--line); }
+    html.theme-light .lang-switch button { color:var(--navy); }
+    html.theme-light .lang-switch button[aria-pressed="true"] { background:var(--navy); color:#fff; }
+    html.theme-light .theme-toggle { color:var(--navy); }
+    html.theme-light .section-kicker { color:#8b6c3f; }
+    html.theme-light .section-title, html.theme-light .practice-card h3 { color:var(--navy); }
+    html.theme-light .body-copy, html.theme-light .practice-card p { color:#5d6878; }
+    html.theme-light .icon-box { background:#f2ede4; color:#8b6c3f; }
+    html.theme-light .map-frame { background:linear-gradient(145deg,#e8e4db,#f5f1e8); }
+    html.theme-light .brand-home .text-slate-500 { color:#64748b; }
+    html.theme-light .brand-mark { color:var(--gold); }
   </style>
   <script type="application/ld+json" id="schema"></script>
 </head>
@@ -151,6 +178,10 @@
         <a class="nav-link" href="#contact" data-en="Contact" data-bn="যোগাযোগ" data-hi="संपर्क">Contact</a>
       </nav>
       <div class="lang-switch" id="languageToggle" role="group" aria-label="Choose language" data-aria-en="Choose language" data-aria-bn="ভাষা নির্বাচন করুন" data-aria-hi="भाषा चुनें"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="bn" aria-pressed="false">বাংলা</button><button type="button" data-language="hi" aria-pressed="false">हिन्दी</button></div>
+      <button class="theme-toggle" id="themeToggleBtn" type="button" aria-label="Toggle color theme" data-aria-en="Toggle color theme" data-aria-bn="রঙের থিম পরিবর্তন করুন" data-aria-hi="रंग थीम बदलें" title="Toggle color theme" data-title-en="Toggle color theme" data-title-bn="রঙের থিম পরিবর্তন করুন" data-title-hi="रंग थीम बदलें">
+        <svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.6 8.6 0 1 0 20.5 15.2Z"/></svg>
+      </button>
     </div>
     <nav class="wrap flex justify-center gap-6 border-t border-[var(--line)] py-1 md:hidden" aria-label="Mobile navigation" data-aria-en="Mobile navigation" data-aria-bn="মোবাইল নেভিগেশন" data-aria-hi="मोबाइल नेविगेशन">
       <a class="nav-link" href="#about" data-en="About" data-bn="পরিচিতি" data-hi="परिचय">About</a><a class="nav-link" href="#practice" data-en="Practice" data-bn="কাজের ক্ষেত্র" data-hi="कार्य क्षेत्र">Practice</a><a class="nav-link" href="#courts" data-en="Courts" data-bn="আদালত" data-hi="न्यायालय">Courts</a><a class="nav-link" href="#contact" data-en="Contact" data-bn="যোগাযোগ" data-hi="संपर्क">Contact</a>
@@ -160,10 +191,10 @@
     <section class="hero" id="top">
       <div class="wrap grid min-h-[480px] items-center gap-12 py-16 md:grid-cols-[1.2fr_.8fr] md:py-24">
         <div class="reveal">
-          <p class="eyebrow mb-6" data-en="Professional information" data-bn="পেশাগত তথ্য" data-hi="व्यावसायिक जानकारी">Professional information</p>
+          <p class="eyebrow mb-6" data-en="Rampurhat Bar Association · Birbhum Judiciary" data-bn="রামপুরহাট বার অ্যাসোসিয়েশন · বীরভূম বিচারব্যবস্থা" data-hi="रामपुरहाट बार एसोसिएशन · बीरभूम न्यायपालिका">Rampurhat Bar Association · Birbhum Judiciary</p>
           <h1 class="serif mb-5 text-6xl font-semibold leading-[1.04] tracking-tight"><span data-name></span></h1>
           <div class="gold-line mb-6"></div>
-          <p class="max-w-xl text-lg leading-relaxed text-slate-200" data-en="Advocate – Rampurhat &amp; Suri, Birbhum, West Bengal" data-bn="অ্যাডভোকেট – রামপুরহাট ও সিউড়ি, বীরভূম, পশ্চিমবঙ্গ" data-hi="अधिवक्ता – रामपुरहाट और सूरी, बीरभूम, पश्चिम बंगाल">Advocate – Rampurhat &amp; Suri, Birbhum, West Bengal</p>
+          <p class="max-w-xl text-lg leading-relaxed text-slate-200" data-en="Practising advocate before the Additional Chief Judicial Magistrate and Additional District Judge courts in Rampurhat, and Suri District Court Complex, Birbhum, West Bengal." data-bn="বীরভূম, পশ্চিমবঙ্গের রামপুরহাটের অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট ও অতিরিক্ত জেলা জজ আদালত এবং সিউড়ি জেলা আদালত কমপ্লেক্সে কর্মরত অ্যাডভোকেট।" data-hi="बीरभूम, पश्चिम बंगाल के रामपुरहाट स्थित अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट और अतिरिक्त जिला न्यायाधीश न्यायालयों तथा सूरी जिला न्यायालय परिसर में वकालत करते हैं।">Practising advocate before the Additional Chief Judicial Magistrate and Additional District Judge courts in Rampurhat, and Suri District Court Complex, Birbhum, West Bengal.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a class="btn btn-wa" data-wa href="https://wa.me/918653635636?text=Hello%20Advocate%20Suraj%20Lala%2C%20I%20would%20like%20to%20make%20an%20enquiry%20regarding%20a%20legal%20matter." target="_blank" rel="noopener">
               <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a12 12 0 0 0 5.7 1.5h.1c6.6 0 12-5.3 12-11.9 0-3.2-1.3-6.1-3.7-8.4ZM12.1 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.5-9.8 10-9.8 2.6 0 5 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.5 9.9-9.9 9.9Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.1 1.4 3.3.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>
@@ -335,6 +366,18 @@
         if (persist) { try { localStorage.setItem("advocateSiteLanguage",lang); } catch (_) {} }
       }
       let initial="en"; try { const saved=localStorage.getItem("advocateSiteLanguage"); if (["en","bn","hi"].includes(saved)) initial=saved; } catch (_) {}
+      function setTheme(theme,persist=true) {
+        const light=theme==="light";
+        document.documentElement.classList.toggle("theme-light",light);
+        document.documentElement.classList.toggle("dark",!light);
+        const toggle=document.getElementById("themeToggleBtn"); if(toggle)toggle.setAttribute("aria-pressed",String(light));
+        if (persist) { try { localStorage.setItem("advocateSiteTheme",light?"light":"dark"); } catch (_) {} }
+      }
+      let initialTheme=window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+      try { const savedTheme=localStorage.getItem("advocateSiteTheme"); if (["light","dark"].includes(savedTheme)) initialTheme=savedTheme; } catch (_) {}
+      setTheme(initialTheme,false);
+      const themeToggle=document.getElementById("themeToggleBtn");
+      themeToggle.addEventListener("click",()=>setTheme(document.documentElement.classList.contains("theme-light")?"dark":"light"));
       document.querySelectorAll("[data-language]").forEach(button=>button.addEventListener("click",()=>language(button.dataset.language)));
       language(initial,false);
       const schema={"@context":"https://schema.org","@type":"Attorney","name":`Advocate ${CONFIG.name}`,"url":location.href,"areaServed":["Rampurhat, Birbhum, West Bengal","Suri, Birbhum, West Bengal"],"address":{"@type":"PostalAddress","streetAddress":configured(CONFIG.officeAddress)?CONFIG.officeAddress:undefined,"addressLocality":CONFIG.locationArea||"Rampurhat","addressRegion":"West Bengal","postalCode":(/\b\d{6}\b/.exec(CONFIG.officeAddress||"")||[])[0]||undefined,"addressCountry":"IN"},"telephone":configured(CONFIG.phoneDisplay)?CONFIG.phoneDisplay:undefined,"email":configured(CONFIG.email)?CONFIG.email:undefined,"hasCredential":qualifications.filter(configured).map(name=>({"@type":"EducationalOccupationalCredential","credentialCategory":"degree",name})),"memberOf":[CONFIG.stateBarCouncil,CONFIG.barAssociation].filter(configured),"knowsAbout":["Criminal law","Civil matters","Negotiable Instruments Act","Matrimonial and family matters","Company matters","Motor accident claims","Succession and testamentary matters","Execution proceedings"]};
