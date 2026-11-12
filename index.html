@@ -178,7 +178,8 @@
     html.theme-light .brand-home [data-name] { color:var(--navy); }
     .professional-bar { background:linear-gradient(90deg,#2b160e,#321d12,#2b160e); border-bottom:1px solid rgba(176,141,87,.28); color:#f1d18d; font-size:.72rem; letter-spacing:.025em; }
     .status-dot { width:8px; height:8px; flex:0 0 8px; border-radius:50%; background:#35d49a; box-shadow:0 0 0 3px rgba(53,212,154,.14); }
-    .name-accent { color:#e6c15a; }
+    .name-accent { color:#e6c15a; animation:nameGlow 7s ease-in-out infinite; }
+    @keyframes nameGlow { 0%,100% { text-shadow:0 0 0 rgba(230,193,90,0); } 50% { text-shadow:0 0 14px rgba(230,193,90,.24); } }
     .hero-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; }
     .hero-fact { position:relative; min-width:0; overflow:hidden; padding:.9rem; border:1px solid rgba(176,141,87,.34); border-radius:12px; background:linear-gradient(145deg,rgba(16,26,41,.96),rgba(9,14,26,.9)); box-shadow:0 14px 32px rgba(0,0,0,.16); }
     .hero-fact:nth-child(3) { grid-column:span 2; }
