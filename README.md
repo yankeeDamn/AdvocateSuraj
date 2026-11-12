@@ -6,7 +6,7 @@ A single-page, bilingual English/Bengali static website. It uses semantic HTML, 
 
 Open `index.html` and edit the `CONFIG` object near the top of the file. Replace the sample email, office address, enrolment details, bar association, qualification, office hours and last-updated date with verified information. Clear a string (`""`) or use an empty qualifications array (`[]`) to omit optional information. Placeholder text such as `XXXX` is shown until you replace it or clear the field. The WhatsApp number is country code plus number, digits only; verify it before publishing.
 
-- `portraitUrl`: optional URL of an image you have permission to use. The portrait area stays typographic when blank.
+- `portraitUrl`: path or URL of the portrait. The supplied portrait is in `images/advocate-suraj-lala.webp`; replace the file or clear this field to hide it.
 - `mapEmbedUrl`: optional Google Maps embed URL for the office. Use an embed URL, not a search or sharing URL. The map placeholder appears when blank.
 - `ecourtsProfile`: public profile link; blank hides the link.
 - `profileNote`: optional short factual profile paragraph.

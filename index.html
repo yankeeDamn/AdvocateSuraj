@@ -8,6 +8,7 @@
   <meta name="description" content="Professional information and contact details for Advocate Suraj Lala in Rampurhat and Suri, Birbhum, West Bengal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
+  <meta property="og:image" content="">
   <meta property="og:title" content="Advocate Suraj Lala | Rampurhat &amp; Suri, Birbhum">
   <meta property="og:description" content="Professional information and contact details for Advocate Suraj Lala in Birbhum, West Bengal.">
   <meta property="og:locale" content="en_IN">
@@ -34,7 +35,7 @@
       officeHours: "",
       profileNote: "",
       mapEmbedUrl: "",
-      portraitUrl: "",
+      portraitUrl: "images/advocate-suraj-lala.webp",
       lastUpdated: "12 November 2026"
     };
   </script>
@@ -137,7 +138,7 @@
           </div>
           <p class="mt-4 max-w-md text-xs leading-relaxed text-slate-300" data-en="Please do not share confidential documents until an engagement is confirmed." data-bn="পেশাগত নিয়োগ নিশ্চিত না হওয়া পর্যন্ত অনুগ্রহ করে গোপনীয় নথি শেয়ার করবেন না।">Please do not share confidential documents until an engagement is confirmed.</p>
         </div>
-        <div class="relative mx-auto hidden w-full max-w-[330px] md:block">
+        <div class="relative mx-auto w-full max-w-[280px] md:max-w-[330px]">
           <div class="aspect-[4/5] overflow-hidden rounded-t-[48%] border border-[#B08D57]/50 bg-white/5 p-3">
             <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" hidden>
             <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-t-[48%] border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)">Professional portrait (optional)</span></div>
@@ -267,7 +268,7 @@
       if (!/^\d{10,15}$/.test(waNumber)) document.querySelectorAll("[data-wa]").forEach(a => a.hidden=true);
       document.querySelectorAll("[data-email]").forEach(a => { if (configured(CONFIG.email) && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONFIG.email)) a.href=`mailto:${CONFIG.email}`; else a.removeAttribute("href"); });
       if (nonempty(CONFIG.ecourtsProfile)) document.getElementById("ecourtsLink").href = CONFIG.ecourtsProfile; else document.getElementById("ecourtsLink").hidden = true;
-      if (nonempty(CONFIG.portraitUrl)) { const img=document.getElementById("portrait"); img.src=CONFIG.portraitUrl; img.hidden=false; document.getElementById("portraitPlaceholder").hidden=true; }
+      if (nonempty(CONFIG.portraitUrl)) { const img=document.getElementById("portrait"); img.src=CONFIG.portraitUrl; img.hidden=false; document.getElementById("portraitPlaceholder").hidden=true; document.querySelector('meta[property="og:image"]').content=new URL(CONFIG.portraitUrl,location.href).href; }
       if (nonempty(CONFIG.mapEmbedUrl)) { const map=document.getElementById("officeMap"); map.src=CONFIG.mapEmbedUrl; map.hidden=false; document.getElementById("mapPlaceholder").hidden=true; }
       if (nonempty(CONFIG.lastUpdated)) { const t=document.getElementById("lastUpdated"); t.textContent=CONFIG.lastUpdated; } else document.getElementById("lastUpdated").parentElement.hidden=true;
       document.getElementById("year").textContent = new Date().getFullYear();
