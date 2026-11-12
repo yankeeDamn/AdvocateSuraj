@@ -23,6 +23,8 @@
     /* Edit contact and profile details here. Blank values are omitted from the page. */
     const CONFIG = {
       name: "Suraj Lala",
+      nameBn: "সুরজ লালা",
+      nameHi: "सूरज लाला",
       whatsappNumber: "918653635636", // country code + number, no + or spaces
       phoneDisplay: "+91 86536 35636",
       email: "Surajlala@gmail.com",
@@ -359,6 +361,8 @@
         const associationValue=document.getElementById("barAssociation"); if(associationValue)associationValue.textContent=CONFIG[`barAssociation${suffix}`]||CONFIG.barAssociation;
         const aboutValue=lang === "bn" ? CONFIG.profileNoteBn : lang === "hi" ? CONFIG.profileNoteHi : CONFIG.profileNote;
         const about=document.getElementById("profileNote"); if(about){about.textContent=aboutValue||"";about.hidden=!nonempty(aboutValue);}
+        const translatedName=lang === "bn" ? CONFIG.nameBn : lang === "hi" ? CONFIG.nameHi : displayName;
+        document.querySelectorAll("[data-name]").forEach(el=>el.textContent=translatedName||displayName);
         const updatedValue=document.getElementById("lastUpdated"); if(updatedValue)updatedValue.textContent=CONFIG[`lastUpdated${suffix}`]||CONFIG.lastUpdated;
         document.querySelectorAll("[data-aria-en][data-aria-bn][data-aria-hi]").forEach(el => el.setAttribute("aria-label", el.dataset[`aria${lang === "en" ? "En" : lang === "bn" ? "Bn" : "Hi"}`]));
         document.querySelectorAll("[data-title-en][data-title-bn][data-title-hi]").forEach(el => el.title = el.dataset[`title${lang === "en" ? "En" : lang === "bn" ? "Bn" : "Hi"}`]);
