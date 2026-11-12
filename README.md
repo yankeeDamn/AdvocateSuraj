@@ -4,16 +4,16 @@ A single-page, bilingual English/Bengali static website. It uses semantic HTML, 
 
 ## Edit the site
 
-Open `index.html` and edit the `CONFIG` object near the top of the file. Replace the sample email, office address, enrolment details, bar association, qualification, office hours and last-updated date with verified information. Clear a string (`""`) or use an empty qualifications array (`[]`) to omit optional information. Placeholder text such as `XXXX` is shown until you replace it or clear the field. The WhatsApp number is country code plus number, digits only; verify it before publishing.
+Open `index.html` and edit the `CONFIG` object near the top of the file. The supplied email, Rampurhat location/address, office hours and LL.B. qualification are already populated. Verify them before deployment. Clear optional strings (`""`) or use an empty qualifications array (`[]`) to omit a field. The WhatsApp number is country code plus number, digits only; verify it before publishing.
 
 - `portraitUrl`: path or URL of the portrait. The supplied portrait is in `images/advocate-suraj-lala.webp`; replace the file or clear this field to hide it.
-- `mapEmbedUrl`: optional Google Maps embed URL for the office. Use an embed URL, not a search or sharing URL. The map placeholder appears when blank.
+- `mapEmbedUrl`: Google Maps embed URL for the office. The current value searches the supplied Rampurhat location; update it if the map pin should point to a more precise office location.
 - `ecourtsProfile`: public profile link; blank hides the link.
 - `profileNote`: optional short factual profile paragraph.
 
 To edit or add translations, update the `data-en` / `data-bn` values in the HTML. The language button switches all page strings and updates the WhatsApp prefilled message; the preference is saved in `localStorage` inside `try/catch`.
 
-Before publishing, check every professional detail, verify the contact number, and replace or remove all remaining `XXXX` placeholders. Keep the footer disclaimer accurate and have the advocate verify it.
+Before publishing, verify each professional detail, map location and contact number. Keep the footer disclaimer accurate and have the advocate verify it.
 
 ## WhatsApp message
 
