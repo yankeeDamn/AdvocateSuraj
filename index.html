@@ -100,6 +100,17 @@
     .section-kicker { color:#d1b27b; text-transform:uppercase; letter-spacing:.14em; font-weight:700; font-size:.72rem; }
     .section-title { color:#f4f1e9; letter-spacing:-.025em; }
     .card { background:var(--card); border:1px solid var(--line); border-radius:12px; }
+    .about-detail-card { position:relative; min-width:0; overflow:hidden; border-color:rgba(176,141,87,.35); background:linear-gradient(145deg,#101a29,#0a101d); box-shadow:0 14px 32px rgba(0,0,0,.14); }
+    .about-detail-card:before { content:""; position:absolute; inset:0 0 auto; height:2px; background:linear-gradient(90deg,#b08d57,#e6c15a,transparent); }
+    .about-detail-card p,.about-detail-card li { color:#d6dee8; }
+    .detail-chip { display:inline-flex; min-height:24px; align-items:center; border:1px solid rgba(176,141,87,.3); border-radius:6px; padding:.18rem .5rem; background:rgba(176,141,87,.1); color:#e7c56d; font-size:.66rem; font-weight:750; }
+    .about-chambers { display:grid; grid-template-columns:1.5fr 1fr; gap:1rem; border-color:rgba(176,141,87,.42); background:linear-gradient(120deg,#0b1220,#111c2c); }
+    .about-chambers-value { color:#f0f2f5; font-size:.9rem; font-weight:650; line-height:1.55; }
+    html.theme-light .about-detail-card { background:linear-gradient(145deg,#fffefa,#f3eee4); border-color:rgba(176,141,87,.48); }
+    html.theme-light .about-detail-card p,html.theme-light .about-detail-card li { color:#34445a; }
+    html.theme-light .about-chambers { background:linear-gradient(120deg,#fffefa,#f3eee4); }
+    html.theme-light .about-chambers-value { color:#17263a; }
+    @media (max-width:700px) { .about-chambers { grid-template-columns:1fr; } }
     .practice-card { min-height:176px; transition:transform .2s,border-color .2s,box-shadow .2s; }
     .practice-card:hover { transform:translateY(-3px); border-color:rgba(176,141,87,.65); box-shadow:0 12px 30px rgba(11,31,58,.07); }
     .icon-box { width:42px; height:42px; border-radius:10px; display:grid; place-items:center; background:#263341; color:#e1c58f; }
@@ -253,7 +264,7 @@
           <div class="hero-facts mt-7 reveal">
             <article class="hero-fact"><span class="hero-fact-label" data-en="Courts of practice" data-bn="কর্মক্ষেত্রের আদালত" data-hi="कार्य क्षेत्र के न्यायालय">Courts of practice</span><span class="hero-fact-value" data-en="ACJM &amp; ADJ, Rampurhat · Suri District Court" data-bn="রামপুরহাটের অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট ও জেলা জজ আদালত · সিউড়ি জেলা আদালত" data-hi="रामपुरहाट के अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट एवं जिला न्यायाधीश न्यायालय · सूरी जिला न्यायालय">ACJM &amp; ADJ, Rampurhat · Suri District Court</span></article>
             <article class="hero-fact"><span class="hero-fact-label" data-en="Bar association" data-bn="বার অ্যাসোসিয়েশন" data-hi="बार एसोसिएशन">Bar association</span><span class="hero-fact-value" data-en="Rampurhat Bar Association" data-bn="রামপুরহাট বার অ্যাসোসিয়েশন" data-hi="रामपुरहाट बार एसोसिएशन">Rampurhat Bar Association</span></article>
-            <article class="hero-fact"><span class="hero-fact-label" data-en="Qualification" data-bn="শিক্ষাগত যোগ্যতা" data-hi="शैक्षणिक योग्यता">Qualification</span><span class="hero-fact-value">LL.B.</span></article>
+            <article class="hero-fact"><span class="hero-fact-label" data-en="Qualification" data-bn="শিক্ষাগত যোগ্যতা" data-hi="शैक्षणिक योग्यता">Qualification</span><span id="heroQualificationValue" class="hero-fact-value">LL.B.</span></article>
           </div>
         </div>
         <div class="hero-visual reveal relative mx-auto w-full max-w-[330px] md:max-w-[430px]">
@@ -271,10 +282,14 @@
         <div class="reveal"><p class="section-kicker mb-3" data-en="Profile" data-bn="পরিচিতি" data-hi="परिचय">Profile</p><h2 class="serif section-title text-4xl" data-en="About" data-bn="পরিচিতি" data-hi="परिचय">About</h2></div>
         <div class="reveal">
           <p id="profileNote" class="body-copy mb-8" data-en="Professional profile information can be added here." data-bn="এখানে পেশাগত পরিচিতির তথ্য যোগ করা যেতে পারে।" data-hi="यहाँ व्यावसायिक परिचय की जानकारी दी जा सकती है।">Professional profile information can be added here.</p>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="card p-5"><p class="section-kicker mb-3" data-en="Qualifications" data-bn="শিক্ষাগত যোগ্যতা" data-hi="शैक्षणिक योग्यता">Qualifications</p><ul id="qualifications" class="space-y-2 text-sm leading-relaxed"></ul></div>
-            <div class="card p-5"><p class="section-kicker mb-3" data-en="State Bar Council" data-bn="রাজ্য বার কাউন্সিল" data-hi="राज्य बार काउंसिल">State Bar Council</p><p id="stateBarCouncil" class="text-sm font-semibold"></p></div>
-            <div class="card p-5"><p class="section-kicker mb-3" data-en="Bar association" data-bn="বার অ্যাসোসিয়েশন" data-hi="बार एसोसिएशन">Bar association</p><p id="barAssociation" class="text-sm font-semibold"></p></div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="card about-detail-card p-5"><div class="mb-4 flex items-center justify-between gap-2"><p class="section-kicker m-0" data-en="Courts of practice" data-bn="কর্মক্ষেত্রের আদালত" data-hi="कार्य क्षेत्र के न्यायालय">Courts of practice</p><span class="detail-chip" data-en="Birbhum" data-bn="বীরভূম" data-hi="बीरभूम">Birbhum</span></div><ul class="space-y-2 text-sm font-semibold leading-relaxed"><li data-en="Additional Chief Judicial Magistrate, Rampurhat" data-bn="অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট, রামপুরহাট" data-hi="अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट, रामपुरहाट">Additional Chief Judicial Magistrate, Rampurhat</li><li data-en="Additional District Judge, Rampurhat" data-bn="অতিরিক্ত জেলা জজ, রামপুরহাট" data-hi="अतिरिक्त जिला न्यायाधीश, रामपुरहाट">Additional District Judge, Rampurhat</li><li data-en="Suri District Court Complex" data-bn="সিউড়ি জেলা আদালত চত্বর" data-hi="सूरी जिला न्यायालय परिसर">Suri District Court Complex</li></ul></article>
+            <article class="card about-detail-card p-5"><div class="mb-4 flex items-center justify-between gap-2"><p class="section-kicker m-0" data-en="Bar affiliation" data-bn="বার অ্যাসোসিয়েশনের সদস্যপদ" data-hi="बार एसोसिएशन संबद्धता">Bar affiliation</p><span class="detail-chip" data-en="Membership" data-bn="সদস্যপদ" data-hi="सदस्यता">Membership</span></div><p id="barAssociation" class="mb-4 text-sm font-semibold"></p><p class="section-kicker mb-2" data-en="State Bar Council" data-bn="রাজ্য বার কাউন্সিল" data-hi="राज्य बार काउंसिल">State Bar Council</p><p id="stateBarCouncil" class="text-sm font-semibold"></p></article>
+            <article class="card about-detail-card p-5"><div class="mb-4 flex items-center justify-between gap-2"><p class="section-kicker m-0" data-en="Professional qualification" data-bn="পেশাগত যোগ্যতা" data-hi="व्यावसायिक योग्यता">Professional qualification</p><span id="qualificationChip" class="detail-chip">LL.B.</span></div><ul id="qualifications" class="space-y-2 text-sm font-semibold leading-relaxed"></ul></article>
+          </div>
+          <div class="card about-detail-card about-chambers mt-4 p-5">
+            <div data-about-field="officeAddress"><p class="section-kicker mb-2" data-en="Chambers location" data-bn="চেম্বারের ঠিকানা" data-hi="चैंबर का पता">Chambers location</p><p class="about-chambers-value" data-contact-value="officeAddress"></p></div>
+            <div data-about-field="officeHours"><p class="section-kicker mb-2" data-en="Office hours" data-bn="কার্যালয়ের সময়" data-hi="कार्यालय समय">Office hours</p><p class="about-chambers-value" data-contact-value="officeHours"></p></div>
           </div>
         </div>
       </div>
@@ -369,9 +384,9 @@
       document.querySelectorAll("[data-initials]").forEach(el => el.textContent = displayName.split(/\s+/).map(p=>p[0]||"").join("").slice(0,2).toUpperCase());
 
       ["officeAddress","locationArea","phoneDisplay","email","officeHours"].forEach(key => {
-        const val = CONFIG[key]; const group = document.querySelector(`[data-contact-field="${key}"]`);
-        if (!nonempty(val)) { if (group) group.hidden = true; return; }
-        const out = document.querySelector(`[data-contact-value="${key}"]`); if (out) out.textContent = val;
+        const val = CONFIG[key]; const group = document.querySelector(`[data-contact-field="${key}"]`); const aboutGroup = document.querySelector(`[data-about-field="${key}"]`);
+        if (!nonempty(val)) { if (group) group.hidden = true; if (aboutGroup) aboutGroup.hidden = true; return; }
+        document.querySelectorAll(`[data-contact-value="${key}"]`).forEach(out => out.textContent = val);
       });
       document.getElementById("stateBarCouncil").textContent = CONFIG.stateBarCouncil || "";
       if (!nonempty(CONFIG.stateBarCouncil)) document.getElementById("stateBarCouncil").parentElement.hidden = true;
@@ -380,6 +395,10 @@
       const qlist = document.getElementById("qualifications");
       const qualifications = (CONFIG.qualifications || []).filter(nonempty);
       if (!qualifications.length) qlist.parentElement.hidden = true;
+      const qualificationSummary=qualifications.join(", ");
+      document.getElementById("qualificationChip").textContent=qualificationSummary;
+      document.getElementById("heroQualificationValue").textContent=qualificationSummary;
+      if(!qualifications.length)document.getElementById("heroQualificationValue").closest(".hero-fact").hidden=true;
       qualifications.forEach(q => { const li=document.createElement("li"); li.textContent=q; qlist.appendChild(li); });
 
       if (nonempty(CONFIG.phoneDisplay)) document.querySelectorAll("[data-phone]").forEach(a => { if (configured(CONFIG.phoneDisplay)) a.href=`tel:${CONFIG.phoneDisplay.replace(/[^+\d]/g,"")}`; else a.removeAttribute("href"); });
@@ -407,7 +426,7 @@
           locationArea:CONFIG[`locationArea${suffix}`]||CONFIG.locationArea,
           officeHours:CONFIG[`officeHours${suffix}`]||CONFIG.officeHours
         };
-        Object.entries(localizedValues).forEach(([key,value])=>{const el=document.querySelector(`[data-contact-value="${key}"]`);if(el)el.textContent=value||"";});
+        Object.entries(localizedValues).forEach(([key,value])=>document.querySelectorAll(`[data-contact-value="${key}"]`).forEach(el=>el.textContent=value||""));
         if(heroLocation)heroLocation.textContent=localizedValues.locationArea||"";
         const councilValue=document.getElementById("stateBarCouncil"); if(councilValue)councilValue.textContent=CONFIG[`stateBarCouncil${suffix}`]||CONFIG.stateBarCouncil;
         const associationValue=document.getElementById("barAssociation"); if(associationValue)associationValue.textContent=CONFIG[`barAssociation${suffix}`]||CONFIG.barAssociation;
