@@ -1,6 +1,6 @@
 # Advocate Suraj Lala — professional information site
 
-A single-page static website with English, Bengali and Hindi language options. It uses semantic HTML, inline CSS and vanilla JavaScript, with Tailwind CSS and Google Fonts loaded from their CDNs. Subtle reveal and accent animations respect reduced-motion preferences. There is no backend, form, cookie, or tracking code.
+A single-page static website with English, Bengali and Hindi language options. It uses semantic HTML, inline CSS and vanilla JavaScript, with Tailwind CSS and Google Fonts loaded from their CDNs. The dark navy-and-gold interface includes a saved light/dark theme switch and subtle reveal and accent animations that respect reduced-motion preferences. There is no backend, form, cookie, or tracking code.
 
 ## Edit the site
 
@@ -11,7 +11,7 @@ Open `index.html` and edit the `CONFIG` object near the top of the file. The sup
 - `ecourtsProfile`: public profile link; blank hides the link.
 - `profileNote`, `profileNoteBn`, `profileNoteHi`: the English, Bengali and Hindi About paragraphs. Keep these factual and neutral. Do not add case records, client names, outcomes, ratings, testimonials, experience claims, fee offers or solicitation language.
 
-To edit translations, update the `data-en`, `data-bn` and `data-hi` values in the HTML. The language selector switches page text, metadata, contact details and the WhatsApp prefilled message. The preference is saved in `localStorage` inside `try/catch`.
+To edit translations, update the `data-en`, `data-bn` and `data-hi` values in the HTML. The language selector switches page text, metadata, contact details and the WhatsApp prefilled message. The theme control switches between dark and light presentation; both choices are saved in `localStorage` inside `try/catch`. The preference is saved in `localStorage` inside `try/catch`.
 
 Before publishing, verify each professional detail, map location and contact number. Keep the footer disclaimer accurate and have the advocate verify it.
 
