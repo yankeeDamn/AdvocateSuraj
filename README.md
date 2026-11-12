@@ -9,7 +9,7 @@ Open `index.html` and edit the `CONFIG` object near the top of the file. The sup
 - `portraitUrl`: path or URL of the portrait. The supplied portrait is in `images/advocate-suraj-lala.webp`; replace the file or clear this field to hide it.
 - `mapEmbedUrl`: Google Maps embed URL for the office. The current value searches the supplied Rampurhat location; update it if the map pin should point to a more precise office location.
 - `ecourtsProfile`: public profile link; blank hides the link.
-- `profileNote`: optional short factual profile paragraph.
+- `profileNote`, `profileNoteBn`, `profileNoteHi`: the English, Bengali and Hindi About paragraphs. Keep these factual and neutral. Do not add case records, client names, outcomes, ratings, testimonials, experience claims, fee offers or solicitation language.
 
 To edit translations, update the `data-en`, `data-bn` and `data-hi` values in the HTML. The language selector switches page text, metadata, contact details and the WhatsApp prefilled message. The preference is saved in `localStorage` inside `try/catch`.
 
