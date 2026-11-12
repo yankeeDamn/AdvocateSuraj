@@ -13,10 +13,11 @@
   <meta property="og:description" content="Professional information and contact details for Advocate Suraj Lala in Birbhum, West Bengal.">
   <meta property="og:locale" content="en_IN">
   <meta property="og:locale:alternate" content="bn_IN">
+  <meta property="og:locale:alternate" content="hi_IN">
   <meta name="color-scheme" content="light dark">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     /* Edit contact and profile details here. Blank values are omitted from the page. */
@@ -27,20 +28,30 @@
       email: "Surajlala@gmail.com",
       officeAddress: "Ward No. 11, P.O. & P.S., Bagan Para, Rampurhat, West Bengal – 731224",
       officeAddressBn: "ওয়ার্ড নং ১১, পি.ও. ও পি.এস., বাগান পাড়া, রামপুরহাট, পশ্চিমবঙ্গ – ৭৩১২২৪",
+      officeAddressHi: "वार्ड नं. 11, पी.ओ. और पी.एस., बागान पारा, रामपुरहाट, पश्चिम बंगाल – 731224",
       locationArea: "Chaldhowani Para, Rampurhat",
       locationAreaBn: "চালধোয়ানি পাড়া, রামপুরহাট",
+      locationAreaHi: "चालधोवानी पारा, रामपुरहाट",
       stateBarCouncil: "Bar Council of West Bengal",
       stateBarCouncilBn: "পশ্চিমবঙ্গ বার কাউন্সিল",
+      stateBarCouncilHi: "पश्चिम बंगाल बार काउंसिल",
+      barAssociation: "Rampurhat Bar Association",
+      barAssociationBn: "রামপুরহাট বার অ্যাসোসিয়েশন",
+      barAssociationHi: "रामपुरहाट बार एसोसिएशन",
       qualifications: ["LL.B."],
       ecourtsProfile: "https://ecourtsindia.com/lawyer/suraj-lala",
       officeHours: "Open 24 hours",
       officeHoursBn: "২৪ ঘণ্টা খোলা",
-      profileNote: "",
+      officeHoursHi: "24 घंटे खुला",
+      profileNote: "Advocate Suraj Lala is a practising lawyer based in Rampurhat, Birbhum, West Bengal. Areas of practice include criminal and civil matters.",
+      profileNoteBn: "অ্যাডভোকেট সুরজ লালা পশ্চিমবঙ্গের বীরভূম জেলার রামপুরহাটে কর্মরত একজন আইনজীবী। তাঁর কাজের ক্ষেত্রের মধ্যে ফৌজদারি ও দেওয়ানি বিষয় অন্তর্ভুক্ত।",
+      profileNoteHi: "अधिवक्ता सुरज लाला पश्चिम बंगाल के बीरभूम ज़िले के रामपुरहाट में वकालत करते हैं। उनके कार्यक्षेत्र में आपराधिक और दीवानी मामले शामिल हैं.",
       mapEmbedUrl: "https://www.google.com/maps?output=embed&cid=9894814549936854279",
       mapLink: "https://www.google.com/maps?cid=9894814549936854279",
       portraitUrl: "images/advocate-suraj-lala.webp",
       lastUpdated: "12 November 2026",
-      lastUpdatedBn: "১২ নভেম্বর ২০২৬"
+      lastUpdatedBn: "১২ নভেম্বর ২০২৬",
+      lastUpdatedHi: "१२ नवंबर २०२६"
     };
   </script>
   <style>
@@ -50,17 +61,22 @@
     body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,"Noto Sans Bengali",sans-serif; }
     .serif { font-family:"Playfair Display",Georgia,serif; }
     [lang="bn"] body, body.bn { font-family:"Noto Sans Bengali",Inter,sans-serif; }
+    [lang="hi"] body, body.hi { font-family:"Noto Sans Devanagari",Inter,sans-serif; }
     a, button { -webkit-tap-highlight-color:transparent; }
     .wrap { width:min(1120px,calc(100% - 32px)); margin-inline:auto; }
     .topbar { background:rgba(250,248,244,.92); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
     .nav-link { min-height:44px; display:inline-flex; align-items:center; color:#34445a; font-size:.83rem; font-weight:600; text-decoration:none; }
     .nav-link:hover { color:var(--gold); }
-    .lang-toggle { min-height:44px; border:1px solid var(--line); border-radius:999px; padding:0 14px; background:var(--card); color:var(--navy); font-weight:700; }
+    .lang-switch { display:flex; align-items:center; gap:2px; padding:3px; border:1px solid var(--line); border-radius:999px; background:var(--card); }
+    .lang-switch button { min-width:44px; min-height:44px; border:0; border-radius:999px; padding:0 9px; background:transparent; color:var(--navy); font:inherit; font-size:.76rem; font-weight:700; cursor:pointer; }
+    .lang-switch button[aria-pressed="true"] { background:var(--navy); color:#fff; }
+    .lang-switch button:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
     .hero { position:relative; isolation:isolate; overflow:hidden; background:var(--navy); color:#fff; }
-    .hero:before { content:""; position:absolute; z-index:-1; width:370px; height:370px; right:-100px; top:-120px; border:1px solid rgba(176,141,87,.4); border-radius:50%; box-shadow:0 0 0 34px rgba(176,141,87,.08),0 0 0 70px rgba(176,141,87,.05); }
-    .hero:after { content:""; position:absolute; z-index:-1; width:120px; height:1px; right:12%; top:55%; background:var(--gold); transform:rotate(-38deg); }
+    .hero:before { content:""; position:absolute; z-index:-1; width:370px; height:370px; right:-100px; top:-120px; border:1px solid rgba(176,141,87,.4); border-radius:50%; box-shadow:0 0 0 34px rgba(176,141,87,.08),0 0 0 70px rgba(176,141,87,.05); animation:orbitFloat 16s ease-in-out infinite; }
+    .hero:after { content:""; position:absolute; z-index:-1; width:120px; height:1px; right:12%; top:55%; background:var(--gold); transform:rotate(-38deg); animation:accentGlow 5s ease-in-out infinite; }
     .eyebrow { color:#d7bd91; letter-spacing:.16em; text-transform:uppercase; font-size:.72rem; font-weight:700; }
-    .gold-line { width:54px; height:2px; background:var(--gold); }
+    .gold-line { position:relative; width:54px; height:2px; overflow:hidden; background:var(--gold); }
+    .gold-line:after { content:""; position:absolute; inset:0 auto 0 -18px; width:12px; background:rgba(255,255,255,.75); animation:lineTravel 4.8s ease-in-out infinite; }
     .btn { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:.65rem; border-radius:8px; padding:.75rem 1.05rem; font-weight:700; text-decoration:none; transition:transform .18s,background .18s; }
     .btn:hover { transform:translateY(-1px); }
     .btn-wa { background:#25D366; color:#062811; }
@@ -83,19 +99,31 @@
     .whatsapp-float:after { content:attr(data-tooltip); position:absolute; right:68px; white-space:nowrap; border-radius:6px; padding:8px 10px; background:var(--navy); color:white; font-size:.75rem; opacity:0; pointer-events:none; transform:translateX(4px); transition:.18s; }
     .whatsapp-float:hover:after,.whatsapp-float:focus-visible:after { opacity:1; transform:none; }
     @keyframes pulse { 0%,100% { box-shadow:0 8px 24px rgba(0,0,0,.2),0 0 0 0 rgba(37,211,102,.28); } 50% { box-shadow:0 8px 24px rgba(0,0,0,.2),0 0 0 9px rgba(37,211,102,0); } }
+    @keyframes orbitFloat { 0%,100% { transform:translateY(0) rotate(0); } 50% { transform:translateY(14px) rotate(3deg); } }
+    @keyframes accentGlow { 0%,100% { opacity:.4; } 50% { opacity:.95; } }
+    @keyframes lineTravel { 0%,25% { transform:translateX(0); opacity:0; } 45% { opacity:.8; } 75%,100% { transform:translateX(70px); opacity:0; } }
     .reveal { opacity:0; transform:translateY(12px); transition:opacity .55s ease,transform .55s ease; }
     .reveal.visible { opacity:1; transform:none; }
+    #practice .practice-card:nth-child(2) { transition-delay:60ms; }
+    #practice .practice-card:nth-child(3) { transition-delay:120ms; }
+    #practice .practice-card:nth-child(4) { transition-delay:180ms; }
+    #practice .practice-card:nth-child(5) { transition-delay:240ms; }
+    #practice .practice-card:nth-child(6) { transition-delay:300ms; }
+    #practice .practice-card:nth-child(7) { transition-delay:360ms; }
+    #practice .practice-card:nth-child(8) { transition-delay:420ms; }
     .skip { position:absolute; left:-999px; top:0; z-index:100; padding:12px; background:white; color:var(--navy); }
     .skip:focus { left:8px; }
     [hidden] { display:none !important; }
     @media (max-width:700px) { .desktop-nav { display:none; } .hero h1 { font-size:clamp(2.65rem,13vw,4.2rem); } .hero:before { right:-220px; } .mobile-call { display:inline-flex; } }
     @media (min-width:701px) { .mobile-call { display:none; } }
-    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } .reveal { opacity:1; transform:none; } }
+    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto !important; animation:none !important; transition-duration:.01ms !important; } .reveal { opacity:1; transform:none; } .practice-card:hover,.btn:hover { transform:none; } }
     @media (prefers-color-scheme:dark) {
       :root { --paper:#101820; --ink:#eef1f5; --muted:#bac4d0; --line:#2b3948; --card:#17232f; }
       .topbar { background:rgba(16,24,32,.93); }
       .nav-link { color:#d2dbe6; }
-      .lang-toggle { background:#17232f; color:#f3e7cf; }
+      .lang-switch { background:#17232f; }
+      .lang-switch button { color:#f3e7cf; }
+      .lang-switch button[aria-pressed="true"] { background:#e2c58d; color:#0B1F3A; }
       .section-title,.practice-card h3 { color:#f4f1e9; }
       .body-copy,.practice-card p { color:#c2ccd7; }
       .icon-box { background:#263341; color:#e1c58f; }
@@ -106,46 +134,46 @@
   <script type="application/ld+json" id="schema"></script>
 </head>
 <body>
-  <a class="skip" href="#main" data-en="Skip to content" data-bn="মূল বিষয়ে যান">Skip to content</a>
+  <a class="skip" href="#main" data-en="Skip to content" data-bn="মূল বিষয়ে যান" data-hi="मुख्य सामग्री पर जाएँ">Skip to content</a>
   <header class="topbar sticky top-0 z-20">
     <div class="wrap flex min-h-[72px] items-center justify-between gap-4">
-      <a href="#top" class="flex items-center gap-3 no-underline" aria-label="Advocate Suraj Lala — home" data-aria-en="Advocate Suraj Lala — home" data-aria-bn="অ্যাডভোকেট সুরজ লালা — মূল পৃষ্ঠা">
+      <a href="#top" class="flex items-center gap-3 no-underline" aria-label="Advocate Suraj Lala — home" data-aria-en="Advocate Suraj Lala — home" data-aria-bn="অ্যাডভোকেট সুরজ লালা — মূল পৃষ্ঠা" data-aria-hi="अधिवक्ता सुरज लाला — मुख्य पृष्ठ">
         <span class="grid h-10 w-10 place-items-center rounded-full border border-[#B08D57] text-sm font-semibold text-[#B08D57]">SL</span>
-        <span class="leading-tight"><span class="block text-sm font-bold tracking-wide text-[var(--navy)]" data-name></span><span class="mt-1 block text-[10px] tracking-[.12em] text-slate-500" data-en="ADVOCATE" data-bn="অ্যাডভোকেট">ADVOCATE</span></span>
+        <span class="leading-tight"><span class="block text-sm font-bold tracking-wide text-[var(--navy)]" data-name></span><span class="mt-1 block text-[10px] tracking-[.12em] text-slate-500" data-en="ADVOCATE" data-bn="অ্যাডভোকেট" data-hi="अधिवक्ता">ADVOCATE</span></span>
       </a>
-      <nav class="desktop-nav flex items-center gap-6" aria-label="Primary navigation" data-aria-en="Primary navigation" data-aria-bn="প্রধান নেভিগেশন">
-        <a class="nav-link" href="#about" data-en="About" data-bn="পরিচিতি">About</a>
-        <a class="nav-link" href="#practice" data-en="Practice Areas" data-bn="কাজের ক্ষেত্র">Practice Areas</a>
-        <a class="nav-link" href="#courts" data-en="Courts" data-bn="আদালত">Courts</a>
-        <a class="nav-link" href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+      <nav class="desktop-nav flex items-center gap-6" aria-label="Primary navigation" data-aria-en="Primary navigation" data-aria-bn="প্রধান নেভিগেশন" data-aria-hi="मुख्य नेविगेशन">
+        <a class="nav-link" href="#about" data-en="About" data-bn="পরিচিতি" data-hi="परिचय">About</a>
+        <a class="nav-link" href="#practice" data-en="Practice Areas" data-bn="কাজের ক্ষেত্র" data-hi="कार्य क्षेत्र">Practice Areas</a>
+        <a class="nav-link" href="#courts" data-en="Courts" data-bn="আদালত" data-hi="न्यायालय">Courts</a>
+        <a class="nav-link" href="#contact" data-en="Contact" data-bn="যোগাযোগ" data-hi="संपर्क">Contact</a>
       </nav>
-      <button class="lang-toggle" id="languageToggle" type="button" aria-label="Switch language to Bengali">EN <span aria-hidden="true">|</span> বাংলা</button>
+      <div class="lang-switch" id="languageToggle" role="group" aria-label="Choose language" data-aria-en="Choose language" data-aria-bn="ভাষা নির্বাচন করুন" data-aria-hi="भाषा चुनें"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="bn" aria-pressed="false">বাংলা</button><button type="button" data-language="hi" aria-pressed="false">हिन्दी</button></div>
     </div>
-    <nav class="wrap flex justify-center gap-6 border-t border-[var(--line)] py-1 md:hidden" aria-label="Mobile navigation" data-aria-en="Mobile navigation" data-aria-bn="মোবাইল নেভিগেশন">
-      <a class="nav-link" href="#about" data-en="About" data-bn="পরিচিতি">About</a><a class="nav-link" href="#practice" data-en="Practice" data-bn="কাজের ক্ষেত্র">Practice</a><a class="nav-link" href="#courts" data-en="Courts" data-bn="আদালত">Courts</a><a class="nav-link" href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
+    <nav class="wrap flex justify-center gap-6 border-t border-[var(--line)] py-1 md:hidden" aria-label="Mobile navigation" data-aria-en="Mobile navigation" data-aria-bn="মোবাইল নেভিগেশন" data-aria-hi="मोबाइल नेविगेशन">
+      <a class="nav-link" href="#about" data-en="About" data-bn="পরিচিতি" data-hi="परिचय">About</a><a class="nav-link" href="#practice" data-en="Practice" data-bn="কাজের ক্ষেত্র" data-hi="कार्य क्षेत्र">Practice</a><a class="nav-link" href="#courts" data-en="Courts" data-bn="আদালত" data-hi="न्यायालय">Courts</a><a class="nav-link" href="#contact" data-en="Contact" data-bn="যোগাযোগ" data-hi="संपर्क">Contact</a>
     </nav>
   </header>
   <main id="main">
     <section class="hero" id="top">
       <div class="wrap grid min-h-[480px] items-center gap-12 py-16 md:grid-cols-[1.2fr_.8fr] md:py-24">
         <div class="reveal">
-          <p class="eyebrow mb-6" data-en="Professional information" data-bn="পেশাগত তথ্য">Professional information</p>
+          <p class="eyebrow mb-6" data-en="Professional information" data-bn="পেশাগত তথ্য" data-hi="व्यावसायिक जानकारी">Professional information</p>
           <h1 class="serif mb-5 text-6xl font-semibold leading-[1.04] tracking-tight"><span data-name></span></h1>
           <div class="gold-line mb-6"></div>
-          <p class="max-w-xl text-lg leading-relaxed text-slate-200" data-en="Advocate – Rampurhat &amp; Suri, Birbhum, West Bengal" data-bn="অ্যাডভোকেট – রামপুরহাট ও সিউড়ি, বীরভূম, পশ্চিমবঙ্গ">Advocate – Rampurhat &amp; Suri, Birbhum, West Bengal</p>
+          <p class="max-w-xl text-lg leading-relaxed text-slate-200" data-en="Advocate – Rampurhat &amp; Suri, Birbhum, West Bengal" data-bn="অ্যাডভোকেট – রামপুরহাট ও সিউড়ি, বীরভূম, পশ্চিমবঙ্গ" data-hi="अधिवक्ता – रामपुरहाट और सूरी, बीरभूम, पश्चिम बंगाल">Advocate – Rampurhat &amp; Suri, Birbhum, West Bengal</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a class="btn btn-wa" data-wa href="https://wa.me/918653635636?text=Hello%20Advocate%20Suraj%20Lala%2C%20I%20would%20like%20to%20make%20an%20enquiry%20regarding%20a%20legal%20matter." target="_blank" rel="noopener">
               <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a12 12 0 0 0 5.7 1.5h.1c6.6 0 12-5.3 12-11.9 0-3.2-1.3-6.1-3.7-8.4ZM12.1 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.5-9.8 10-9.8 2.6 0 5 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.5 9.9-9.9 9.9Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.1 1.4 3.3.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>
-              <span data-en="Message on WhatsApp" data-bn="হোয়াটসঅ্যাপে বার্তা পাঠান">Message on WhatsApp</span>
+              <span data-en="Message on WhatsApp" data-bn="হোয়াটসঅ্যাপে বার্তা পাঠান" data-hi="व्हाट्सऐप पर संदेश भेजें">Message on WhatsApp</span>
             </a>
-            <a class="btn btn-outline mobile-call" data-phone href="tel:+918653635636"><span aria-hidden="true">☎</span><span data-en="Call" data-bn="ফোন করুন">Call</span></a>
+            <a class="btn btn-outline mobile-call" data-phone href="tel:+918653635636"><span aria-hidden="true">☎</span><span data-en="Call" data-bn="ফোন করুন" data-hi="कॉल करें">Call</span></a>
           </div>
-          <p class="mt-4 max-w-md text-xs leading-relaxed text-slate-300" data-en="Please do not share confidential documents until an engagement is confirmed." data-bn="পেশাগত নিয়োগ নিশ্চিত না হওয়া পর্যন্ত অনুগ্রহ করে গোপনীয় নথি শেয়ার করবেন না।">Please do not share confidential documents until an engagement is confirmed.</p>
+          <p class="mt-4 max-w-md text-xs leading-relaxed text-slate-300" data-en="Please do not share confidential documents until an engagement is confirmed." data-bn="পেশাগত নিয়োগ নিশ্চিত না হওয়া পর্যন্ত অনুগ্রহ করে গোপনীয় নথি শেয়ার করবেন না।" data-hi="नियुक्ति की पुष्टि होने तक कृपया गोपनीय दस्तावेज़ साझा न करें।">Please do not share confidential documents until an engagement is confirmed.</p>
         </div>
         <div class="relative mx-auto w-full max-w-[280px] md:max-w-[330px]">
           <div class="aspect-[4/5] overflow-hidden rounded-t-[48%] border border-[#B08D57]/50 bg-white/5 p-3">
-            <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" hidden>
-            <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-t-[48%] border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)">Professional portrait (optional)</span></div>
+            <img id="portrait" class="h-full w-full rounded-t-[48%] object-cover" alt="Portrait of Advocate Suraj Lala" data-alt-en="Portrait of Advocate Suraj Lala" data-alt-bn="অ্যাডভোকেট সুরজ লালার প্রতিকৃতি" data-alt-hi="अधिवक्ता सुरज लाला का चित्र" hidden>
+            <div id="portraitPlaceholder" class="flex h-full flex-col items-center justify-center rounded-t-[48%] border border-dashed border-white/20 text-center text-sm text-slate-300"><span class="serif mb-3 text-5xl text-[#B08D57]" data-initials>SL</span><span data-en="Professional portrait (optional)" data-bn="পেশাগত প্রতিকৃতি (ঐচ্ছিক)" data-hi="व्यावसायिक चित्र (वैकल्पिक)">Professional portrait (optional)</span></div>
           </div>
           <span class="absolute -bottom-4 -left-5 h-16 w-16 rounded-full border border-[#B08D57]/70"></span>
         </div>
@@ -153,42 +181,43 @@
     </section>
     <section id="about" class="wrap py-20 md:py-24">
       <div class="grid gap-10 md:grid-cols-[.75fr_1.25fr]">
-        <div class="reveal"><p class="section-kicker mb-3" data-en="Profile" data-bn="পরিচিতি">Profile</p><h2 class="serif section-title text-4xl" data-en="About" data-bn="পরিচিতি">About</h2></div>
+        <div class="reveal"><p class="section-kicker mb-3" data-en="Profile" data-bn="পরিচিতি" data-hi="परिचय">Profile</p><h2 class="serif section-title text-4xl" data-en="About" data-bn="পরিচিতি" data-hi="परिचय">About</h2></div>
         <div class="reveal">
-          <p id="profileNote" class="body-copy mb-8" data-en="Professional profile information can be added here." data-bn="এখানে পেশাগত পরিচিতির তথ্য যোগ করা যেতে পারে।">Professional profile information can be added here.</p>
+          <p id="profileNote" class="body-copy mb-8" data-en="Professional profile information can be added here." data-bn="এখানে পেশাগত পরিচিতির তথ্য যোগ করা যেতে পারে।" data-hi="यहाँ व्यावसायिक परिचय की जानकारी दी जा सकती है।">Professional profile information can be added here.</p>
           <div class="grid gap-4 sm:grid-cols-2">
-            <div class="card p-5"><p class="section-kicker mb-3" data-en="Qualifications" data-bn="শিক্ষাগত যোগ্যতা">Qualifications</p><ul id="qualifications" class="space-y-2 text-sm leading-relaxed"></ul></div>
-            <div class="card p-5"><p class="section-kicker mb-3" data-en="State Bar Council" data-bn="রাজ্য বার কাউন্সিল">State Bar Council</p><p id="stateBarCouncil" class="text-sm font-semibold"></p></div>
+            <div class="card p-5"><p class="section-kicker mb-3" data-en="Qualifications" data-bn="শিক্ষাগত যোগ্যতা" data-hi="शैक्षणिक योग्यता">Qualifications</p><ul id="qualifications" class="space-y-2 text-sm leading-relaxed"></ul></div>
+            <div class="card p-5"><p class="section-kicker mb-3" data-en="State Bar Council" data-bn="রাজ্য বার কাউন্সিল" data-hi="राज्य बार काउंसिल">State Bar Council</p><p id="stateBarCouncil" class="text-sm font-semibold"></p></div>
+            <div class="card p-5"><p class="section-kicker mb-3" data-en="Bar association" data-bn="বার অ্যাসোসিয়েশন" data-hi="बार एसोसिएशन">Bar association</p><p id="barAssociation" class="text-sm font-semibold"></p></div>
           </div>
         </div>
       </div>
     </section>
     <section id="practice" class="border-y border-[var(--line)] bg-[#f4f1ea] py-20 md:py-24 dark:bg-[#131f2a]">
       <div class="wrap">
-        <div class="mb-10 max-w-xl reveal"><p class="section-kicker mb-3" data-en="Areas of practice" data-bn="কাজের ক্ষেত্র">Areas of practice</p><h2 class="serif section-title text-4xl" data-en="Practice Areas" data-bn="কাজের ক্ষেত্র">Practice Areas</h2><p class="body-copy mt-4" data-en="The following areas are listed as professional information." data-bn="নিম্নলিখিত ক্ষেত্রগুলি পেশাগত তথ্য হিসেবে উল্লেখ করা হয়েছে।">The following areas are listed as professional information.</p></div>
+        <div class="mb-10 max-w-xl reveal"><p class="section-kicker mb-3" data-en="Areas of practice" data-bn="কাজের ক্ষেত্র" data-hi="कार्य के क्षेत्र">Areas of practice</p><h2 class="serif section-title text-4xl" data-en="Practice Areas" data-bn="কাজের ক্ষেত্র" data-hi="कार्य क्षेत्र">Practice Areas</h2><p class="body-copy mt-4" data-en="The following areas are listed as professional information." data-bn="নিম্নলিখিত ক্ষেত্রগুলি পেশাগত তথ্য হিসেবে উল্লেখ করা হয়েছে।" data-hi="निम्नलिखित क्षेत्रों का उल्लेख व्यावसायिक जानकारी के रूप में किया गया है।">The following areas are listed as professional information.</p></div>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 4 7l8 4 8-4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg></div><h3 data-en="Criminal law" data-bn="ফৌজদারি আইন">Criminal law</h3><p class="mt-2" data-en="Trial court proceedings and bail applications." data-bn="বিচার আদালতের কার্যক্রম এবং জামিনের আবেদন।">Trial court proceedings and bail applications.</p></article>
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></div><h3 data-en="Civil matters" data-bn="দেওয়ানি বিষয়">Civil matters</h3><p class="mt-2" data-en="Civil proceedings, applications and related civil matters." data-bn="দেওয়ানি কার্যধারা, আবেদন এবং সংশ্লিষ্ট দেওয়ানি বিষয়।">Civil proceedings, applications and related civil matters.</p></article>
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h10M7 14h5"/></svg></div><h3 data-en="Negotiable Instruments Act" data-bn="নেগোশিয়েবল ইনস্ট্রুমেন্টস আইন">Negotiable Instruments Act</h3><p class="mt-2" data-en="Cheque dishonour matters under the Negotiable Instruments Act." data-bn="নেগোশিয়েবল ইনস্ট্রুমেন্টস আইনের অধীনে চেক প্রত্যাখ্যান-সংক্রান্ত বিষয়।">Cheque dishonour matters under the Negotiable Instruments Act.</p></article>
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s8-4 8-11V5l-8-3-8 3v5c0 7 8 11 8 11Z"/><path d="M9 12h6M12 9v6"/></svg></div><h3 data-en="Matrimonial and family matters" data-bn="বিবাহ ও পারিবারিক বিষয়">Matrimonial and family matters</h3><p class="mt-2" data-en="Matrimonial proceedings and applications under the Hindu Marriage Act." data-bn="হিন্দু বিবাহ আইনের অধীনে বিবাহ-সংক্রান্ত কার্যধারা ও আবেদন।">Matrimonial proceedings and applications under the Hindu Marriage Act.</p></article>
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 11h1m4 0h1m-6 4h1m4 0h1"/></svg></div><h3 data-en="Company matters" data-bn="কোম্পানি-সংক্রান্ত বিষয়">Company matters</h3><p class="mt-2" data-en="Company-related proceedings and applications." data-bn="কোম্পানি-সংক্রান্ত কার্যধারা ও আবেদন।">Company-related proceedings and applications.</p></article>
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 13h2l2-5h10l2 5h2v5h-2M5 18H3v-5M7 18h10M7 18a2 2 0 1 1-4 0m14 0a2 2 0 1 0 4 0"/><path d="M8 8l1-3h6l1 3"/></svg></div><h3 data-en="Motor accident claims" data-bn="মোটর দুর্ঘটনার ক্ষতিপূরণ দাবি">Motor accident claims</h3><p class="mt-2" data-en="Motor accident claims and related proceedings." data-bn="মোটর দুর্ঘটনার ক্ষতিপূরণ দাবি ও সংশ্লিষ্ট কার্যধারা।">Motor accident claims and related proceedings.</p></article>
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/><path d="M8 2v4m8-4v4"/></svg></div><h3 data-en="Succession and testamentary matters" data-bn="উত্তরাধিকার ও উইল-সংক্রান্ত বিষয়">Succession and testamentary matters</h3><p class="mt-2" data-en="Succession, probate and testamentary matters." data-bn="উত্তরাধিকার, প্রোবেট ও উইল-সংক্রান্ত বিষয়।">Succession, probate and testamentary matters.</p></article>
-          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4zM8 9h8m-8 4h8m-8 4h4"/><path d="m15 3 3 2-3 2"/></svg></div><h3 data-en="Execution proceedings" data-bn="ডিক্রি জারি-সংক্রান্ত কার্যক্রম">Execution proceedings</h3><p class="mt-2" data-en="Execution of decrees and related proceedings." data-bn="ডিক্রি কার্যকর করার আবেদন ও সংশ্লিষ্ট কার্যধারা।">Execution of decrees and related proceedings.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 4 7l8 4 8-4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg></div><h3 data-en="Criminal law" data-bn="ফৌজদারি আইন" data-hi="आपराधिक कानून">Criminal law</h3><p class="mt-2" data-en="Trial court proceedings and bail applications." data-bn="বিচার আদালতের কার্যক্রম এবং জামিনের আবেদন।" data-hi="निचली अदालत की कार्यवाही और जमानत आवेदन।">Trial court proceedings and bail applications.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></div><h3 data-en="Civil matters" data-bn="দেওয়ানি বিষয়" data-hi="दीवानी मामले">Civil matters</h3><p class="mt-2" data-en="Civil proceedings, applications and related civil matters." data-bn="দেওয়ানি কার্যধারা, আবেদন এবং সংশ্লিষ্ট দেওয়ানি বিষয়।" data-hi="दीवानी कार्यवाही, आवेदन और संबंधित दीवानी मामले।">Civil proceedings, applications and related civil matters.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h10M7 14h5"/></svg></div><h3 data-en="Negotiable Instruments Act" data-bn="নেগোশিয়েবল ইনস্ট্রুমেন্টস আইন" data-hi="परक्राम्य लिखत अधिनियम">Negotiable Instruments Act</h3><p class="mt-2" data-en="Cheque dishonour matters under the Negotiable Instruments Act." data-bn="নেগোশিয়েবল ইনস্ট্রুমেন্টস আইনের অধীনে চেক প্রত্যাখ্যান-সংক্রান্ত বিষয়।" data-hi="परक्राम्य लिखत अधिनियम के अंतर्गत चेक अनादरण संबंधी मामले।">Cheque dishonour matters under the Negotiable Instruments Act.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s8-4 8-11V5l-8-3-8 3v5c0 7 8 11 8 11Z"/><path d="M9 12h6M12 9v6"/></svg></div><h3 data-en="Matrimonial and family matters" data-bn="বিবাহ ও পারিবারিক বিষয়" data-hi="वैवाहिक एवं पारिवारिक मामले">Matrimonial and family matters</h3><p class="mt-2" data-en="Matrimonial proceedings and applications under the Hindu Marriage Act." data-bn="হিন্দু বিবাহ আইনের অধীনে বিবাহ-সংক্রান্ত কার্যধারা ও আবেদন।" data-hi="हिंदू विवाह अधिनियम के अंतर्गत वैवाहिक कार्यवाही एवं आवेदन।">Matrimonial proceedings and applications under the Hindu Marriage Act.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 11h1m4 0h1m-6 4h1m4 0h1"/></svg></div><h3 data-en="Company matters" data-bn="কোম্পানি-সংক্রান্ত বিষয়" data-hi="कंपनी संबंधी मामले">Company matters</h3><p class="mt-2" data-en="Company-related proceedings and applications." data-bn="কোম্পানি-সংক্রান্ত কার্যধারা ও আবেদন।" data-hi="कंपनी से संबंधित कार्यवाही एवं आवेदन।">Company-related proceedings and applications.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 13h2l2-5h10l2 5h2v5h-2M5 18H3v-5M7 18h10M7 18a2 2 0 1 1-4 0m14 0a2 2 0 1 0 4 0"/><path d="M8 8l1-3h6l1 3"/></svg></div><h3 data-en="Motor accident claims" data-bn="মোটর দুর্ঘটনার ক্ষতিপূরণ দাবি" data-hi="मोटर दुर्घटना क्षतिपूर्ति दावे">Motor accident claims</h3><p class="mt-2" data-en="Motor accident claims and related proceedings." data-bn="মোটর দুর্ঘটনার ক্ষতিপূরণ দাবি ও সংশ্লিষ্ট কার্যধারা।" data-hi="मोटर दुर्घटना क्षतिपूर्ति दावे और संबंधित कार्यवाही।">Motor accident claims and related proceedings.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/><path d="M8 2v4m8-4v4"/></svg></div><h3 data-en="Succession and testamentary matters" data-bn="উত্তরাধিকার ও উইল-সংক্রান্ত বিষয়" data-hi="उत्तराधिकार और वसीयत संबंधी मामले">Succession and testamentary matters</h3><p class="mt-2" data-en="Succession, probate and testamentary matters." data-bn="উত্তরাধিকার, প্রোবেট ও উইল-সংক্রান্ত বিষয়।" data-hi="उत्तराधिकार, प्रोबेट और वसीयत संबंधी मामले।">Succession, probate and testamentary matters.</p></article>
+          <article class="card practice-card reveal p-5"><div class="icon-box mb-5" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v14H4zM8 9h8m-8 4h8m-8 4h4"/><path d="m15 3 3 2-3 2"/></svg></div><h3 data-en="Execution proceedings" data-bn="ডিক্রি জারি-সংক্রান্ত কার্যক্রম" data-hi="डिक्री निष्पादन कार्यवाही">Execution proceedings</h3><p class="mt-2" data-en="Execution of decrees and related proceedings." data-bn="ডিক্রি কার্যকর করার আবেদন ও সংশ্লিষ্ট কার্যধারা।" data-hi="डिक्री के निष्पादन हेतु आवेदन और संबंधित कार्यवाही।">Execution of decrees and related proceedings.</p></article>
         </div>
       </div>
     </section>
     <section id="courts" class="wrap py-20 md:py-24">
       <div class="grid gap-10 md:grid-cols-[.75fr_1.25fr]">
-        <div class="reveal"><p class="section-kicker mb-3" data-en="Location" data-bn="অবস্থান">Location</p><h2 class="serif section-title text-4xl" data-en="Courts of Practice" data-bn="কর্মক্ষেত্রের আদালত">Courts of Practice</h2><p class="body-copy mt-4" data-en="Birbhum, West Bengal" data-bn="বীরভূম, পশ্চিমবঙ্গ">Birbhum, West Bengal</p></div>
+        <div class="reveal"><p class="section-kicker mb-3" data-en="Location" data-bn="অবস্থান" data-hi="स्थान">Location</p><h2 class="serif section-title text-4xl" data-en="Courts of Practice" data-bn="কর্মক্ষেত্রের আদালত" data-hi="कार्य क्षेत्र के न्यायालय">Courts of Practice</h2><p class="body-copy mt-4" data-en="Birbhum, West Bengal" data-bn="বীরভূম, পশ্চিমবঙ্গ" data-hi="बीरभूम, पश्चिम बंगाल">Birbhum, West Bengal</p></div>
         <div class="reveal">
           <ul class="m-0 list-none p-0">
-            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Additional Chief Judicial Magistrate, Rampurhat" data-bn="অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট, রামপুরহাট">Additional Chief Judicial Magistrate, Rampurhat</span></li>
-            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Additional District Judge, Rampurhat" data-bn="অতিরিক্ত জেলা জজ, রামপুরহাট">Additional District Judge, Rampurhat</span></li>
-            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Suri District Court Complex" data-bn="সিউড়ি জেলা আদালত চত্বর">Suri District Court Complex</span></li>
-            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Rampurhat Court Complex" data-bn="রামপুরহাট আদালত চত্বর">Rampurhat Court Complex</span></li>
+            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Additional Chief Judicial Magistrate, Rampurhat" data-bn="অতিরিক্ত মুখ্য বিচার বিভাগীয় ম্যাজিস্ট্রেট, রামপুরহাট" data-hi="अतिरिक्त मुख्य न्यायिक मजिस्ट्रेट, रामपुरहाट">Additional Chief Judicial Magistrate, Rampurhat</span></li>
+            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Additional District Judge, Rampurhat" data-bn="অতিরিক্ত জেলা জজ, রামপুরহাট" data-hi="अतिरिक्त जिला न्यायाधीश, रामपुरहाट">Additional District Judge, Rampurhat</span></li>
+            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Suri District Court Complex" data-bn="সিউড়ি জেলা আদালত চত্বর" data-hi="सूरी जिला न्यायालय परिसर">Suri District Court Complex</span></li>
+            <li class="court-row flex gap-3"><span class="text-[#B08D57]" aria-hidden="true">◆</span><span data-en="Rampurhat Court Complex" data-bn="রামপুরহাট আদালত চত্বর" data-hi="रामपुरहाट न्यायालय परिसर">Rampurhat Court Complex</span></li>
           </ul>
-          <a id="ecourtsLink" class="mt-6 inline-flex min-h-[44px] items-center gap-2 font-semibold text-[#80613a] underline decoration-[#B08D57] underline-offset-4" href="https://ecourtsindia.com/lawyer/suraj-lala" target="_blank" rel="noopener"><span data-en="Public court records: eCourtsIndia profile" data-bn="সর্বসাধারণের জন্য আদালতের তথ্য: eCourtsIndia প্রোফাইল">Public court records: eCourtsIndia profile</span><span aria-hidden="true">↗</span></a>
+          <a id="ecourtsLink" class="mt-6 inline-flex min-h-[44px] items-center gap-2 font-semibold text-[#80613a] underline decoration-[#B08D57] underline-offset-4" href="https://ecourtsindia.com/lawyer/suraj-lala" target="_blank" rel="noopener"><span data-en="Public court records: eCourtsIndia profile" data-bn="সর্বসাধারণের জন্য আদালতের তথ্য: eCourtsIndia প্রোফাইল" data-hi="सार्वजनिक न्यायालय रिकॉर्ड: eCourtsIndia प्रोफ़ाइल">Public court records: eCourtsIndia profile</span><span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -196,25 +225,25 @@
       <div class="contact-panel reveal overflow-hidden rounded-2xl p-6 md:p-10">
         <div class="grid gap-9 md:grid-cols-[1fr_1fr]">
           <div>
-            <p class="eyebrow mb-3" data-en="Contact" data-bn="যোগাযোগ">Contact</p>
-            <h2 class="serif mb-6 text-4xl" data-en="Enquiries" data-bn="যোগাযোগের অনুসন্ধান">Enquiries</h2>
+            <p class="eyebrow mb-3" data-en="Contact" data-bn="যোগাযোগ" data-hi="संपर्क">Contact</p>
+            <h2 class="serif mb-6 text-4xl" data-en="Enquiries" data-bn="যোগাযোগের অনুসন্ধান" data-hi="पूछताछ">Enquiries</h2>
             <dl class="space-y-5">
-              <div data-contact-field="locationArea"><dt class="muted text-xs uppercase tracking-wider" data-en="Located in" data-bn="অবস্থিত">Located in</dt><dd class="mt-1 leading-relaxed" data-contact-value="locationArea"></dd></div>
-              <div data-contact-field="officeAddress"><dt class="muted text-xs uppercase tracking-wider" data-en="Address" data-bn="ঠিকানা">Address</dt><dd class="mt-1 leading-relaxed" data-contact-value="officeAddress"></dd></div>
-              <div data-contact-field="phoneDisplay"><dt class="muted text-xs uppercase tracking-wider" data-en="Phone" data-bn="ফোন">Phone</dt><dd class="mt-1"><a data-phone data-contact-value="phoneDisplay" href="tel:+918653635636"></a></dd></div>
-              <div data-contact-field="email"><dt class="muted text-xs uppercase tracking-wider" data-en="Email" data-bn="ইমেল">Email</dt><dd class="mt-1"><a data-email data-contact-value="email"></a></dd></div>
-              <div data-contact-field="officeHours"><dt class="muted text-xs uppercase tracking-wider" data-en="Office hours" data-bn="কার্যালয়ের সময়">Office hours</dt><dd class="mt-1" data-contact-value="officeHours"></dd></div>
+              <div data-contact-field="locationArea"><dt class="muted text-xs uppercase tracking-wider" data-en="Located in" data-bn="অবস্থিত" data-hi="स्थित स्थान">Located in</dt><dd class="mt-1 leading-relaxed" data-contact-value="locationArea"></dd></div>
+              <div data-contact-field="officeAddress"><dt class="muted text-xs uppercase tracking-wider" data-en="Address" data-bn="ঠিকানা" data-hi="पता">Address</dt><dd class="mt-1 leading-relaxed" data-contact-value="officeAddress"></dd></div>
+              <div data-contact-field="phoneDisplay"><dt class="muted text-xs uppercase tracking-wider" data-en="Phone" data-bn="ফোন" data-hi="फ़ोन">Phone</dt><dd class="mt-1"><a data-phone data-contact-value="phoneDisplay" href="tel:+918653635636"></a></dd></div>
+              <div data-contact-field="email"><dt class="muted text-xs uppercase tracking-wider" data-en="Email" data-bn="ইমেল" data-hi="ईमेल">Email</dt><dd class="mt-1"><a data-email data-contact-value="email"></a></dd></div>
+              <div data-contact-field="officeHours"><dt class="muted text-xs uppercase tracking-wider" data-en="Office hours" data-bn="কার্যালয়ের সময়" data-hi="कार्यालय समय">Office hours</dt><dd class="mt-1" data-contact-value="officeHours"></dd></div>
             </dl>
             <div class="mt-7">
-              <a class="btn btn-wa" data-wa href="https://wa.me/918653635636?text=Hello%20Advocate%20Suraj%20Lala%2C%20I%20would%20like%20to%20make%20an%20enquiry%20regarding%20a%20legal%20matter." target="_blank" rel="noopener"><span data-en="Message on WhatsApp" data-bn="হোয়াটসঅ্যাপে বার্তা পাঠান">Message on WhatsApp</span><span aria-hidden="true">↗</span></a>
-              <p class="muted mt-3 max-w-sm text-xs leading-relaxed" data-en="Please do not share confidential documents until an engagement is confirmed." data-bn="পেশাগত নিয়োগ নিশ্চিত না হওয়া পর্যন্ত অনুগ্রহ করে গোপনীয় নথি শেয়ার করবেন না।">Please do not share confidential documents until an engagement is confirmed.</p>
+              <a class="btn btn-wa" data-wa href="https://wa.me/918653635636?text=Hello%20Advocate%20Suraj%20Lala%2C%20I%20would%20like%20to%20make%20an%20enquiry%20regarding%20a%20legal%20matter." target="_blank" rel="noopener"><span data-en="Message on WhatsApp" data-bn="হোয়াটসঅ্যাপে বার্তা পাঠান" data-hi="व्हाट्सऐप पर संदेश भेजें">Message on WhatsApp</span><span aria-hidden="true">↗</span></a>
+              <p class="muted mt-3 max-w-sm text-xs leading-relaxed" data-en="Please do not share confidential documents until an engagement is confirmed." data-bn="পেশাগত নিয়োগ নিশ্চিত না হওয়া পর্যন্ত অনুগ্রহ করে গোপনীয় নথি শেয়ার করবেন না।" data-hi="नियुक्ति की पुष्टि होने तक कृपया गोपनीय दस्तावेज़ साझा न करें।">Please do not share confidential documents until an engagement is confirmed.</p>
             </div>
           </div>
           <div class="flex flex-col gap-3">
-            <div class="flex items-center justify-between"><h3 class="font-semibold" data-en="Office location" data-bn="কার্যালয়ের অবস্থান">Office location</h3><span class="muted text-xs" data-en="Office map" data-bn="কার্যালয়ের মানচিত্র">Office map</span></div>
-            <div id="mapPlaceholder" class="map-frame grid place-items-center rounded-lg p-5 text-center text-sm text-slate-600 dark:text-slate-300"><span data-en="Add an office map embed URL in CONFIG.mapEmbedUrl" data-bn="CONFIG.mapEmbedUrl-এ কার্যালয়ের মানচিত্রের এমবেড URL যোগ করুন">Add an office map embed URL in CONFIG.mapEmbedUrl</span></div>
-            <iframe id="officeMap" class="map-frame" title="Office location map" data-title-en="Office location map" data-title-bn="কার্যালয়ের অবস্থানের মানচিত্র" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
-            <a id="mapLink" class="inline-flex min-h-[44px] items-center font-semibold text-[#f1d7a7] underline decoration-[#B08D57] underline-offset-4" href="https://www.google.com/maps/search/?api=1&amp;query=Chaldhowani+Para%2C+Rampurhat%2C+West+Bengal+731224" target="_blank" rel="noopener" data-en="Open in Google Maps" data-bn="Google Maps-এ খুলুন">Open in Google Maps</a>
+            <div class="flex items-center justify-between"><h3 class="font-semibold" data-en="Office location" data-bn="কার্যালয়ের অবস্থান" data-hi="कार्यालय का स्थान">Office location</h3><span class="muted text-xs" data-en="Office map" data-bn="কার্যালয়ের মানচিত্র" data-hi="कार्यालय का मानचित्र">Office map</span></div>
+            <div id="mapPlaceholder" class="map-frame grid place-items-center rounded-lg p-5 text-center text-sm text-slate-600 dark:text-slate-300"><span data-en="Add an office map embed URL in CONFIG.mapEmbedUrl" data-bn="CONFIG.mapEmbedUrl-এ কার্যালয়ের মানচিত্রের এমবেড URL যোগ করুন" data-hi="CONFIG.mapEmbedUrl में कार्यालय के मानचित्र का एम्बेड URL जोड़ें">Add an office map embed URL in CONFIG.mapEmbedUrl</span></div>
+            <iframe id="officeMap" class="map-frame" title="Office location map" data-title-en="Office location map" data-title-bn="কার্যালয়ের অবস্থানের মানচিত্র" data-title-hi="कार्यालय के स्थान का मानचित्र" loading="lazy" referrerpolicy="no-referrer-when-downgrade" hidden></iframe>
+            <a id="mapLink" class="inline-flex min-h-[44px] items-center font-semibold text-[#f1d7a7] underline decoration-[#B08D57] underline-offset-4" href="https://www.google.com/maps/search/?api=1&amp;query=Chaldhowani+Para%2C+Rampurhat%2C+West+Bengal+731224" target="_blank" rel="noopener" data-en="Open in Google Maps" data-bn="Google Maps-এ খুলুন" data-hi="Google Maps में खोलें">Open in Google Maps</a>
           </div>
         </div>
       </div>
@@ -223,22 +252,23 @@
   <footer class="border-t border-[var(--line)] py-8">
     <div class="wrap">
       <div class="rounded-lg border border-[#B08D57]/50 bg-[#f3eee4] p-4 text-sm leading-relaxed text-[#394458] dark:bg-[#1b2834] dark:text-slate-200">
-        <p class="font-bold" data-en="Disclaimer" data-bn="দাবিত্যাগ">Disclaimer</p>
-        <p class="mt-1" data-en="This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship." data-bn="এই তথ্য অ্যাডভোকেট সুরজ লালার অনুরোধে প্রকাশ করা হয়েছে, তথ্যটি সত্য ও যথার্থ এবং এই ওয়েবসাইট বিজ্ঞাপন বা মক্কেল আহ্বান নয়। এই ওয়েবসাইটের কোনও তথ্য আইনি পরামর্শ হিসেবে গণ্য হবে না এবং এর ফলে অ্যাডভোকেট ও মক্কেলের মধ্যে সম্পর্ক তৈরি হবে না।">This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship.</p>
+        <p class="font-bold" data-en="Disclaimer" data-bn="দাবিত্যাগ" data-hi="अस्वीकरण">Disclaimer</p>
+        <p class="mt-1" data-en="This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship." data-bn="এই তথ্য অ্যাডভোকেট সুরজ লালার অনুরোধে প্রকাশ করা হয়েছে, তথ্যটি সত্য ও যথার্থ এবং এই ওয়েবসাইট বিজ্ঞাপন বা মক্কেল আহ্বান নয়। এই ওয়েবসাইটের কোনও তথ্য আইনি পরামর্শ হিসেবে গণ্য হবে না এবং এর ফলে অ্যাডভোকেট ও মক্কেলের মধ্যে সম্পর্ক তৈরি হবে না।" data-hi="यह जानकारी अधिवक्ता सुरज लाला के अनुरोध पर दी गई है और सत्य एवं प्रामाणिक है। यह वेबसाइट विज्ञापन या मुवक्किल प्राप्त करने का आग्रह नहीं करती। यहाँ दी गई कोई भी जानकारी कानूनी सलाह नहीं है और इससे अधिवक्ता-मुवक्किल संबंध स्थापित नहीं होता।">This information is provided on the request of Advocate Suraj Lala, is true and genuine, and this website is not an advertisement or solicitation. Nothing on this website constitutes legal advice or creates an advocate-client relationship.</p>
       </div>
       <div class="mt-5 flex flex-col justify-between gap-3 text-xs text-slate-500 sm:flex-row sm:items-center">
-        <p>© <span id="year"></span> <span data-name></span>. <span data-en="All rights reserved." data-bn="সর্বস্বত্ব সংরক্ষিত।">All rights reserved.</span></p>
-        <p><span data-en="Last updated" data-bn="সর্বশেষ হালনাগাদ">Last updated</span>: <time id="lastUpdated"></time></p>
-        <p data-en="No cookies or tracking. If analytics are added, anonymous analytics only." data-bn="কুকি বা ট্র্যাকিং ব্যবহার করা হয় না। অ্যানালিটিক্স যোগ করা হলে তা কেবল বেনামি অ্যানালিটিক্স হবে।">No cookies or tracking. If analytics are added, anonymous analytics only.</p>
+        <p>© <span id="year"></span> <span data-name></span>. <span data-en="All rights reserved." data-bn="সর্বস্বত্ব সংরক্ষিত।" data-hi="सर्वाधिकार सुरक्षित।">All rights reserved.</span></p>
+        <p><span data-en="Last updated" data-bn="সর্বশেষ হালনাগাদ" data-hi="अंतिम अद्यतन">Last updated</span>: <time id="lastUpdated"></time></p>
+        <p data-en="No cookies or tracking. If analytics are added, anonymous analytics only." data-bn="কুকি বা ট্র্যাকিং ব্যবহার করা হয় না। অ্যানালিটিক্স যোগ করা হলে তা কেবল বেনামি অ্যানালিটিক্স হবে।" data-hi="कुकी या ट्रैकिंग का उपयोग नहीं किया जाता। यदि एनालिटिक्स जोड़े जाएँ, तो केवल अनाम एनालिटिक्स का उपयोग होगा।">No cookies or tracking. If analytics are added, anonymous analytics only.</p>
       </div>
     </div>
   </footer>
-  <a class="whatsapp-float" data-wa href="https://wa.me/918653635636?text=Hello%20Advocate%20Suraj%20Lala%2C%20I%20would%20like%20to%20make%20an%20enquiry%20regarding%20a%20legal%20matter." target="_blank" rel="noopener" aria-label="Message Advocate Suraj Lala on WhatsApp" data-tooltip="Message on WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a12 12 0 0 0 5.7 1.5h.1c6.6 0 12-5.3 12-11.9 0-3.2-1.3-6.1-3.7-8.4ZM12.1 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.5-9.8 10-9.8 2.6 0 5 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.5 9.9-9.9 9.9Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.1 1.4 3.3.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><span class="sr-only" data-en="Message on WhatsApp" data-bn="হোয়াটসঅ্যাপে বার্তা পাঠান">Message on WhatsApp</span></a>
+  <a class="whatsapp-float" data-wa href="https://wa.me/918653635636?text=Hello%20Advocate%20Suraj%20Lala%2C%20I%20would%20like%20to%20make%20an%20enquiry%20regarding%20a%20legal%20matter." target="_blank" rel="noopener" aria-label="Message Advocate Suraj Lala on WhatsApp" data-tooltip="Message on WhatsApp"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a12 12 0 0 0 5.7 1.5h.1c6.6 0 12-5.3 12-11.9 0-3.2-1.3-6.1-3.7-8.4ZM12.1 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.7 9.7 0 0 1-1.5-5.2c0-5.4 4.5-9.8 10-9.8 2.6 0 5 1 6.9 2.9a9.6 9.6 0 0 1 2.9 6.9c0 5.4-4.5 9.9-9.9 9.9Zm5.5-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.1 1.4 3.3.2.2 2.4 3.7 5.8 5.1.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><span class="sr-only" data-en="Message on WhatsApp" data-bn="হোয়াটসঅ্যাপে বার্তা পাঠান" data-hi="व्हाट्सऐप पर संदेश भेजें">Message on WhatsApp</span></a>
   <script>
     (() => {
       const copy = {
-        en: { wa: "Hello Advocate Suraj Lala, I would like to make an enquiry regarding a legal matter.", tooltip: "Message on WhatsApp", waLabel: "Message Advocate Suraj Lala on WhatsApp", title: "Advocate Suraj Lala | Rampurhat & Suri, Birbhum", description: "Professional information and contact details for Advocate Suraj Lala in Rampurhat and Suri, Birbhum, West Bengal." },
-        bn: { wa: "নমস্কার অ্যাডভোকেট সুরজ লালা, একটি আইনি বিষয় সম্পর্কে যোগাযোগ করতে চাই।", tooltip: "হোয়াটসঅ্যাপে বার্তা পাঠান", waLabel: "হোয়াটসঅ্যাপে অ্যাডভোকেট সুরজ লালাকে বার্তা পাঠান", title: "অ্যাডভোকেট সুরজ লালা | রামপুরহাট ও সিউড়ি, বীরভূম", description: "রামপুরহাট ও সিউড়ি, বীরভূম, পশ্চিমবঙ্গের অ্যাডভোকেট সুরজ লালার পেশাগত তথ্য ও যোগাযোগের বিবরণ।" }
+        en: { wa: "Hello Advocate Suraj Lala, I would like to make an enquiry regarding a legal matter.", tooltip: "Message on WhatsApp", waLabel: "Message Advocate Suraj Lala on WhatsApp", title: "Advocate Suraj Lala | Rampurhat & Suri, Birbhum", description: "Professional information and contact details for Advocate Suraj Lala in Rampurhat and Suri, Birbhum, West Bengal.", locale:"en_IN" },
+        bn: { wa: "নমস্কার অ্যাডভোকেট সুরজ লালা, একটি আইনি বিষয় সম্পর্কে যোগাযোগ করতে চাই।", tooltip: "হোয়াটসঅ্যাপে বার্তা পাঠান", waLabel: "হোয়াটসঅ্যাপে অ্যাডভোকেট সুরজ লালাকে বার্তা পাঠান", title: "অ্যাডভোকেট সুরজ লালা | রামপুরহাট ও সিউড়ি, বীরভূম", description: "রামপুরহাট ও সিউড়ি, বীরভূম, পশ্চিমবঙ্গের অ্যাডভোকেট সুরজ লালার পেশাগত তথ্য ও যোগাযোগের বিবরণ।", locale:"bn_IN" },
+        hi: { wa: "नमस्ते अधिवक्ता सुरज लाला। एक कानूनी विषय के संबंध में आपसे जानकारी प्राप्त करनी है।", tooltip: "व्हाट्सऐप पर संदेश भेजें", waLabel: "व्हाट्सऐप पर अधिवक्ता सुरज लाला को संदेश भेजें", title: "अधिवक्ता सुरज लाला | रामपुरहाट और सूरी, बीरभूम", description: "पश्चिम बंगाल के बीरभूम ज़िले के रामपुरहाट और सूरी में अधिवक्ता सुरज लाला की व्यावसायिक जानकारी और संपर्क विवरण।", locale:"hi_IN" }
       };
       const nonempty = value => typeof value === "string" && value.trim().length > 0;
       const configured = value => nonempty(value) && !/X/i.test(value);
@@ -253,12 +283,13 @@
       });
       document.getElementById("stateBarCouncil").textContent = CONFIG.stateBarCouncil || "";
       if (!nonempty(CONFIG.stateBarCouncil)) document.getElementById("stateBarCouncil").parentElement.hidden = true;
+      document.getElementById("barAssociation").textContent = CONFIG.barAssociation || "";
+      if (!nonempty(CONFIG.barAssociation)) document.getElementById("barAssociation").parentElement.hidden = true;
       const qlist = document.getElementById("qualifications");
       const qualifications = (CONFIG.qualifications || []).filter(nonempty);
       if (!qualifications.length) qlist.parentElement.hidden = true;
       qualifications.forEach(q => { const li=document.createElement("li"); li.textContent=q; qlist.appendChild(li); });
-      if (nonempty(CONFIG.profileNote)) document.getElementById("profileNote").textContent = CONFIG.profileNote;
-      else document.getElementById("profileNote").hidden = true;
+
       if (nonempty(CONFIG.phoneDisplay)) document.querySelectorAll("[data-phone]").forEach(a => { if (configured(CONFIG.phoneDisplay)) a.href=`tel:${CONFIG.phoneDisplay.replace(/[^+\d]/g,"")}`; else a.removeAttribute("href"); });
       if (!nonempty(CONFIG.phoneDisplay)) document.querySelectorAll("[data-phone]").forEach(a => a.hidden=true);
       const waNumber=(CONFIG.whatsappNumber||"").replace(/\D/g,"");
@@ -271,26 +302,39 @@
       if (nonempty(CONFIG.lastUpdated)) { const t=document.getElementById("lastUpdated"); t.textContent=CONFIG.lastUpdated; } else document.getElementById("lastUpdated").parentElement.hidden=true;
       document.getElementById("year").textContent = new Date().getFullYear();
       function language(lang, persist=true) {
+        if (!copy[lang]) return;
         document.documentElement.lang=lang;
         document.body.classList.toggle("bn", lang === "bn");
-        document.querySelectorAll("[data-en][data-bn]").forEach(el => el.innerHTML = el.dataset[lang]);
-        const localizedValues={officeAddress:lang === "bn" ? (CONFIG.officeAddressBn||CONFIG.officeAddress) : CONFIG.officeAddress,locationArea:lang === "bn" ? (CONFIG.locationAreaBn||CONFIG.locationArea) : CONFIG.locationArea,officeHours:lang === "bn" ? (CONFIG.officeHoursBn||CONFIG.officeHours) : CONFIG.officeHours};
+        document.body.classList.toggle("hi", lang === "hi");
+        document.querySelectorAll("[data-en][data-bn][data-hi]").forEach(el => el.textContent = el.dataset[lang]);
+        const suffix=lang === "bn" ? "Bn" : lang === "hi" ? "Hi" : "";
+        const localizedValues={
+          officeAddress:CONFIG[`officeAddress${suffix}`]||CONFIG.officeAddress,
+          locationArea:CONFIG[`locationArea${suffix}`]||CONFIG.locationArea,
+          officeHours:CONFIG[`officeHours${suffix}`]||CONFIG.officeHours
+        };
         Object.entries(localizedValues).forEach(([key,value])=>{const el=document.querySelector(`[data-contact-value="${key}"]`);if(el)el.textContent=value||"";});
-        const councilValue=document.getElementById("stateBarCouncil"); if(councilValue) councilValue.textContent=lang === "bn" ? (CONFIG.stateBarCouncilBn||CONFIG.stateBarCouncil) : CONFIG.stateBarCouncil;
-        const updatedValue=document.getElementById("lastUpdated"); if(updatedValue) updatedValue.textContent=lang === "bn" ? (CONFIG.lastUpdatedBn||CONFIG.lastUpdated) : CONFIG.lastUpdated;
-        document.querySelectorAll("[data-aria-en][data-aria-bn]").forEach(el => el.setAttribute("aria-label", el.dataset[`aria${lang === "en" ? "En" : "Bn"}`]));
-        document.querySelectorAll("[data-title-en][data-title-bn]").forEach(el => el.title = el.dataset[`title${lang === "en" ? "En" : "Bn"}`]);
-        document.querySelectorAll("[data-alt-en][data-alt-bn]").forEach(el => el.alt = el.dataset[`alt${lang === "en" ? "En" : "Bn"}`]);
+        const councilValue=document.getElementById("stateBarCouncil"); if(councilValue)councilValue.textContent=CONFIG[`stateBarCouncil${suffix}`]||CONFIG.stateBarCouncil;
+        const associationValue=document.getElementById("barAssociation"); if(associationValue)associationValue.textContent=CONFIG[`barAssociation${suffix}`]||CONFIG.barAssociation;
+        const aboutValue=lang === "bn" ? CONFIG.profileNoteBn : lang === "hi" ? CONFIG.profileNoteHi : CONFIG.profileNote;
+        const about=document.getElementById("profileNote"); if(about){about.textContent=aboutValue||"";about.hidden=!nonempty(aboutValue);}
+        const updatedValue=document.getElementById("lastUpdated"); if(updatedValue)updatedValue.textContent=CONFIG[`lastUpdated${suffix}`]||CONFIG.lastUpdated;
+        document.querySelectorAll("[data-aria-en][data-aria-bn][data-aria-hi]").forEach(el => el.setAttribute("aria-label", el.dataset[`aria${lang === "en" ? "En" : lang === "bn" ? "Bn" : "Hi"}`]));
+        document.querySelectorAll("[data-title-en][data-title-bn][data-title-hi]").forEach(el => el.title = el.dataset[`title${lang === "en" ? "En" : lang === "bn" ? "Bn" : "Hi"}`]);
+        document.querySelectorAll("[data-alt-en][data-alt-bn][data-alt-hi]").forEach(el => el.alt = el.dataset[`alt${lang === "en" ? "En" : lang === "bn" ? "Bn" : "Hi"}`]);
         document.title=copy[lang].title;
         document.querySelector('meta[name="description"]').content=copy[lang].description;
+        document.querySelector('meta[property="og:title"]').content=copy[lang].title;
+        document.querySelector('meta[property="og:description"]').content=copy[lang].description;
+        document.querySelector('meta[property="og:locale"]').content=copy[lang].locale;
         document.querySelectorAll("[data-wa]").forEach(a => { a.href=`https://wa.me/${waNumber}?text=${encodeURIComponent(copy[lang].wa)}`; a.dataset.tooltip=copy[lang].tooltip; a.setAttribute("aria-label", copy[lang].waLabel); });
-        const toggle=document.getElementById("languageToggle"); toggle.setAttribute("aria-label", lang === "en" ? "Switch language to Bengali" : "ভাষা ইংরেজিতে পরিবর্তন করুন");
+        document.querySelectorAll("[data-language]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.language===lang)));
         if (persist) { try { localStorage.setItem("advocateSiteLanguage",lang); } catch (_) {} }
       }
-      let initial="en"; try { const saved=localStorage.getItem("advocateSiteLanguage"); if (saved === "en" || saved === "bn") initial=saved; } catch (_) {}
-      document.getElementById("languageToggle").addEventListener("click",()=>language(document.documentElement.lang === "en" ? "bn" : "en"));
+      let initial="en"; try { const saved=localStorage.getItem("advocateSiteLanguage"); if (["en","bn","hi"].includes(saved)) initial=saved; } catch (_) {}
+      document.querySelectorAll("[data-language]").forEach(button=>button.addEventListener("click",()=>language(button.dataset.language)));
       language(initial,false);
-      const schema={"@context":"https://schema.org","@type":"Attorney","name":`Advocate ${CONFIG.name}`,"url":location.href,"areaServed":["Rampurhat, Birbhum, West Bengal","Suri, Birbhum, West Bengal"],"address":{"@type":"PostalAddress","streetAddress":configured(CONFIG.officeAddress)?CONFIG.officeAddress:undefined,"addressLocality":CONFIG.locationArea||"Rampurhat","addressRegion":"West Bengal","postalCode":(/\b\d{6}\b/.exec(CONFIG.officeAddress||"")||[])[0]||undefined,"addressCountry":"IN"},"telephone":configured(CONFIG.phoneDisplay)?CONFIG.phoneDisplay:undefined,"email":configured(CONFIG.email)?CONFIG.email:undefined,"hasCredential":qualifications.filter(configured).map(name=>({"@type":"EducationalOccupationalCredential","credentialCategory":"degree",name})),"memberOf":configured(CONFIG.stateBarCouncil)?CONFIG.stateBarCouncil:undefined,"knowsAbout":["Criminal law","Civil matters","Negotiable Instruments Act","Matrimonial and family matters","Company matters","Motor accident claims","Succession and testamentary matters","Execution proceedings"]};
+      const schema={"@context":"https://schema.org","@type":"Attorney","name":`Advocate ${CONFIG.name}`,"url":location.href,"areaServed":["Rampurhat, Birbhum, West Bengal","Suri, Birbhum, West Bengal"],"address":{"@type":"PostalAddress","streetAddress":configured(CONFIG.officeAddress)?CONFIG.officeAddress:undefined,"addressLocality":CONFIG.locationArea||"Rampurhat","addressRegion":"West Bengal","postalCode":(/\b\d{6}\b/.exec(CONFIG.officeAddress||"")||[])[0]||undefined,"addressCountry":"IN"},"telephone":configured(CONFIG.phoneDisplay)?CONFIG.phoneDisplay:undefined,"email":configured(CONFIG.email)?CONFIG.email:undefined,"hasCredential":qualifications.filter(configured).map(name=>({"@type":"EducationalOccupationalCredential","credentialCategory":"degree",name})),"memberOf":[CONFIG.stateBarCouncil,CONFIG.barAssociation].filter(configured),"knowsAbout":["Criminal law","Civil matters","Negotiable Instruments Act","Matrimonial and family matters","Company matters","Motor accident claims","Succession and testamentary matters","Execution proceedings"]};
       Object.keys(schema).forEach(k=>{if(schema[k]===undefined)delete schema[k];});
       document.getElementById("schema").textContent=JSON.stringify(schema);
       document.querySelector('meta[property="og:url"]').content=location.href;

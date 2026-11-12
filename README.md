@@ -1,23 +1,23 @@
 # Advocate Suraj Lala — professional information site
 
-A single-page, bilingual English/Bengali static website. It uses semantic HTML, inline CSS and vanilla JavaScript, with Tailwind CSS and Google Fonts loaded from their CDNs. There is no backend, form, cookie, or tracking code.
+A single-page static website with English, Bengali and Hindi language options. It uses semantic HTML, inline CSS and vanilla JavaScript, with Tailwind CSS and Google Fonts loaded from their CDNs. Subtle reveal and accent animations respect reduced-motion preferences. There is no backend, form, cookie, or tracking code.
 
 ## Edit the site
 
-Open `index.html` and edit the `CONFIG` object near the top of the file. The supplied email, Rampurhat location/address, office hours and LL.B. qualification are already populated. Verify them before deployment. Clear optional strings (`""`) or use an empty qualifications array (`[]`) to omit a field. The WhatsApp number is country code plus number, digits only; verify it before publishing.
+Open `index.html` and edit the `CONFIG` object near the top of the file. The supplied email, Rampurhat location/address, office hours, LL.B. qualification and Rampurhat Bar Association membership are populated. Verify them before deployment. Clear optional strings (`""`) or use an empty qualifications array (`[]`) to omit a field. The WhatsApp number is country code plus number, digits only; verify it before publishing.
 
 - `portraitUrl`: path or URL of the portrait. The supplied portrait is in `images/advocate-suraj-lala.webp`; replace the file or clear this field to hide it.
 - `mapEmbedUrl`: Google Maps embed URL for the office. The current value searches the supplied Rampurhat location; update it if the map pin should point to a more precise office location.
 - `ecourtsProfile`: public profile link; blank hides the link.
 - `profileNote`: optional short factual profile paragraph.
 
-To edit or add translations, update the `data-en` / `data-bn` values in the HTML. The language button switches all page strings and updates the WhatsApp prefilled message; the preference is saved in `localStorage` inside `try/catch`.
+To edit translations, update the `data-en`, `data-bn` and `data-hi` values in the HTML. The language selector switches page text, metadata, contact details and the WhatsApp prefilled message. The preference is saved in `localStorage` inside `try/catch`.
 
 Before publishing, verify each professional detail, map location and contact number. Keep the footer disclaimer accurate and have the advocate verify it.
 
 ## WhatsApp message
 
-The page builds a `https://wa.me/<country-code-and-number>?text=<encoded-message>` link from `CONFIG.whatsappNumber`. English and Bengali enquiry messages are encoded when the language changes. Buttons open in a new tab with `rel="noopener"`.
+The page builds a `https://wa.me/<country-code-and-number>?text=<encoded-message>` link from `CONFIG.whatsappNumber`. English, Bengali and Hindi enquiry messages are encoded when the language changes. Buttons open in a new tab with `rel="noopener"`.
 
 ## Deploy free on Netlify
 
