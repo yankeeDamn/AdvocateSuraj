@@ -255,6 +255,37 @@
       .practice-card .icon-box svg,.chart-nodes circle { transform:none !important; transition:none; }
       .practice-card.reveal { transition:none; }
     }
+
+    /* Visible on touch screens as well as desktop. */
+    .hero > .wrap > .reveal:first-child { opacity:1; transform:none; }
+    .hero-heading { animation:heroTextReveal 1.2s cubic-bezier(.22,1,.36,1) .2s both; }
+    .hero-heading .name-accent { color:#e6c15a; background:linear-gradient(110deg,#d4ad4e 15%,#fff2bd 34%,#d4ad4e 48%,#edcf78 65%,#d4ad4e 85%); background-size:240% 100%; background-clip:text; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:nameShimmer 6s ease-in-out infinite; }
+    @keyframes nameShimmer { 0%,15% { background-position:100% 50%; } 75%,100% { background-position:0% 50%; } }
+    .hero-image-frame { animation:portraitFloat 7s ease-in-out infinite; }
+    @keyframes portraitFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-9px); } }
+    .hero-visual:before { content:""; position:absolute; z-index:-1; inset:-12px; border:1px solid rgba(230,193,90,.55); border-radius:23px; transform:rotate(3deg); animation:portraitOutline 9s ease-in-out infinite; }
+    @keyframes portraitOutline { 0%,100% { transform:rotate(3deg); opacity:.5; } 50% { transform:rotate(-2deg); opacity:1; } }
+    .topbar:after { content:""; position:absolute; inset:auto 0 0; height:3px; background:linear-gradient(90deg,#b08d57,#f6dc8f); transform:scaleX(var(--scroll-progress,0)); transform-origin:left; pointer-events:none; }
+    .nav-link { position:relative; }
+    .nav-link:after { content:""; position:absolute; bottom:5px; left:0; right:0; height:2px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
+    .nav-link:hover:after,.nav-link:focus-visible:after { transform:scaleX(1); }
+    .practice-card.reveal { transform:translateY(28px); }
+    .practice-card.reveal.visible { transform:none; }
+    .practice-card.reveal.visible:hover { transform:translateY(-5px); }
+    .chart-draw { stroke-dashoffset:0; }
+    .practice-chart.visible .chart-draw { animation:none; }
+    .practice-chart.is-inview .chart-draw { animation:chartDraw 2.2s cubic-bezier(.22,1,.36,1) .2s both; }
+    @keyframes chartDraw { from { stroke-dashoffset:1; } to { stroke-dashoffset:0; } }
+    .practice-chart.is-inview .chart-nodes circle { animation:chartNodeGlow 3.6s ease-in-out infinite; }
+    .chart-nodes circle:nth-child(2n) { animation-delay:.6s !important; }
+    @keyframes chartNodeGlow { 0%,100% { stroke:#b08d57; stroke-width:1.5; } 50% { stroke:#fff0b2; stroke-width:3; } }
+    @media (prefers-reduced-motion:reduce) {
+      .hero-heading,.hero-heading .name-accent,.hero-image-frame,.hero-visual:before,.practice-chart.is-inview .chart-draw,.practice-chart.is-inview .chart-nodes circle { animation:none !important; }
+      .hero-heading { opacity:1; transform:none; }
+      .hero-heading .name-accent { background:none; -webkit-text-fill-color:currentColor; }
+      .practice-card.reveal,.practice-card.reveal.visible:hover { transform:none; }
+      .chart-draw { stroke-dashoffset:0; }
+    }
   </style>
   <script type="application/ld+json" id="schema"></script>
 </head>
@@ -518,7 +549,17 @@
       document.getElementById("schema").textContent=JSON.stringify(schema);
       document.querySelector('meta[property="og:url"]').content=location.href;
       document.querySelectorAll(".practice-card.reveal").forEach(card=>card.addEventListener("transitionend",event=>{if(event.target===card && event.propertyName==="opacity" && card.classList.contains("visible"))card.classList.add("reveal-settled");}));
-      if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) { const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target);}}),{threshold:.01,rootMargin:"0px 0px 80px 0px"}); document.querySelectorAll(".reveal").forEach(el=>io.observe(el)); } else document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+      if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+          if(e.isIntersecting){e.target.classList.add("visible"); if(!e.target.matches(".practice-chart"))io.unobserve(e.target);}
+          if(e.target.matches(".practice-chart"))e.target.classList.toggle("is-inview",e.isIntersecting);
+        }),{threshold:.08,rootMargin:"0px 0px -5% 0px"});
+        document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+      } else document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+      let progressPending=false;
+      function updateScrollProgress(){const max=document.documentElement.scrollHeight-innerHeight;document.documentElement.style.setProperty("--scroll-progress",max>0?Math.min(1,scrollY/max):0);progressPending=false;}
+      addEventListener("scroll",()=>{if(!progressPending){progressPending=true;requestAnimationFrame(updateScrollProgress);}},{passive:true});
+      addEventListener("resize",updateScrollProgress);updateScrollProgress();
     })();
   </script>
 </body>
